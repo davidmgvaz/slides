@@ -1,0 +1,264 @@
+/* Global styles — auto-loaded by Slidev (style.{ts,js,css} next to slides.md). */
+
+/* ===== Boost Inc brand tokens ============================================= */
+:root {
+  --boost-green: #69D77D;   /* bright green                                   */
+  --boost-dark:  #172E2A;   /* dark green — backgrounds, ink                  */
+  --boost-sand:  #D2CDAF;
+  --boost-coral: #FC5E4D;
+  --boost-cyan:  #66C9DB;
+}
+
+/* ===== Base: whitish content slides, dark-green ink, logo top-right ======= */
+.slidev-layout {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--boost-dark);
+  padding: 1.5rem 2.25rem !important;
+  background-color: #F7FAF8;
+  /* Logo as a background image so it can swap colour per slide background. */
+  background-image: url('/boost-logo-dark.png');
+  background-repeat: no-repeat;
+  background-position: top 0.95rem right 1.5rem;
+  background-size: auto 16px;
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3 {
+  font-family: 'Raleway', 'Inter', sans-serif;
+  font-weight: 800;
+  color: var(--boost-dark);
+  letter-spacing: -0.015em;
+}
+
+.slidev-layout a { color: #1f7a43; text-underline-offset: 2px; }
+.slidev-layout strong { color: var(--boost-dark); font-weight: 700; }
+
+/* ===== Inline code — readable on every background ========================= */
+.slidev-layout :not(pre) > code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.86em;
+  padding: 0.05em 0.34em;
+  border-radius: 4px;
+  background: rgba(23, 46, 42, 0.07) !important;
+  color: var(--boost-dark) !important;
+}
+
+/* ===== Bright-green slides ================================================ */
+.slidev-layout.boost-green-slide {
+  background-color: var(--boost-green) !important;
+  color: var(--boost-dark);
+}
+.slidev-layout.boost-green-slide h1,
+.slidev-layout.boost-green-slide h2 {
+  color: var(--boost-dark);
+  font-size: 2.6rem;
+  line-height: 1.08;
+}
+.slidev-layout.boost-green-slide a { color: var(--boost-dark); }
+.slidev-layout.boost-green-slide :not(pre) > code {
+  background: rgba(23, 46, 42, 0.15) !important;
+  color: var(--boost-dark) !important;
+}
+
+/* ===== Dark-green slides (section dividers) =============================== */
+.slidev-layout.boost-dark-slide {
+  background-color: var(--boost-dark) !important;
+  background-image: url('/boost-logo-green.png');
+  color: #DCEBE1;
+}
+.slidev-layout.boost-dark-slide h1,
+.slidev-layout.boost-dark-slide h2 {
+  color: var(--boost-green);
+  font-size: 2.6rem;
+  line-height: 1.08;
+}
+.slidev-layout.boost-dark-slide a { color: var(--boost-green); }
+.slidev-layout.boost-dark-slide strong { color: #FFFFFF; }
+.slidev-layout.boost-dark-slide :not(pre) > code {
+  background: rgba(105, 215, 125, 0.16) !important;
+  color: var(--boost-green) !important;
+}
+
+/* ===== Statement slides — dark with bright-green corner blobs (tpl s19) ==== */
+.slidev-layout.boost-statement {
+  background-color: var(--boost-dark) !important;
+  /* Logo as a background-image so it always anchors to the slide top-left,
+     regardless of which layout (section / statement / end) is in use. */
+  background-image: url('/boost-logo-green.png');
+  background-position: top 0.95rem left 2.25rem;
+  background-size: auto 18px;
+  color: #E7F1EA;
+  overflow: hidden;
+}
+.slidev-layout.boost-statement h1,
+.slidev-layout.boost-statement h2 {
+  color: #FFFFFF;
+  font-size: 2.7rem;
+  line-height: 1.07;
+}
+.slidev-layout.boost-statement a { color: var(--boost-green); }
+.slidev-layout.boost-statement strong { color: #FFFFFF; }
+.slidev-layout.boost-statement :not(pre) > code {
+  background: rgba(105, 215, 125, 0.16) !important;
+  color: var(--boost-green) !important;
+}
+/* organic green shapes peeking in from opposite corners */
+.slidev-layout.boost-statement::before,
+.slidev-layout.boost-statement::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: var(--boost-green);
+  z-index: 0;
+}
+.slidev-layout.boost-statement::before {
+  width: 21rem; height: 21rem; top: -10.5rem; right: -7rem;
+}
+.slidev-layout.boost-statement::after {
+  width: 18rem; height: 18rem; bottom: -9.5rem; right: -6rem;
+  border-radius: 10%;
+}
+.slidev-layout.boost-statement > * {
+  position: relative;
+  z-index: 1;
+}
+/* Boost logo, top-left — in normal flow above the heading (light-green
+   variant, matching the title slide). */
+.slidev-layout.boost-statement .stmt-logo {
+  display: block;
+  height: 18px;
+  width: auto;
+  margin: 0 0 1.4rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== Closing slide — vending photo (template slide 18) on the right ===== */
+.slidev-layout.boost-thanks::before,
+.slidev-layout.boost-thanks::after { display: none; }
+.boost-thanks .thanks-text {
+  position: absolute;
+  left: 2.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 23rem;
+  z-index: 1;
+}
+.boost-thanks .thanks-text h1 {
+  color: #FFFFFF;
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+}
+.boost-thanks .thanks-text p {
+  color: #E7F1EA;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin: 0;
+}
+.boost-thanks .thanks-photo {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 33rem;
+  height: auto;
+  z-index: 1;
+}
+
+/* ===== Title slide — dark rounded panel on green (template slide-2 look) === */
+.slidev-layout.boost-title {
+  background-color: var(--boost-green) !important;
+  background-image: none;
+  padding: 0 !important;
+}
+/* Two dark rounded panels side by side (33% / 66%) on the green background.
+   The panels touch (no gap) and have big rounded corners — so their adjacent
+   corners curve away from the seam, leaving the green scallop notches that
+   give the template slide-2 look. */
+.boost-title .bt-row {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  gap: 0;
+}
+.boost-title .bt-panel {
+  background: var(--boost-dark);
+  border-radius: 6.5rem;
+  padding: 2.6rem 2.3rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.boost-title .bt-left {
+  flex: 0 0 35%;
+  justify-content: flex-start;
+}
+.boost-title .bt-right {
+  flex: 1;
+  justify-content: space-between;
+}
+.boost-title .bt-logo {
+  height: auto;
+  width: auto;
+}
+.boost-title .bt-title {
+  font-family: 'Raleway', 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 2.15rem;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--boost-green);
+  margin: 1.4rem 0 0 0;
+}
+.boost-title .bt-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  line-height: 1.55;
+  color: var(--boost-green);
+  opacity: 0.8;
+  margin: 0;
+}
+/* Author / date line — pinned to the bottom of the left panel, slightly larger. */
+.boost-title .bt-author {
+  margin-top: auto;
+  font-size: 0.92rem;
+  opacity: 1;
+}
+.boost-title .bt-name {
+  color: #FFFFFF;
+}
+.boost-title .bt-sub {
+  font-family: 'Raleway', 'Inter', sans-serif;
+  font-weight: 700;
+  color: #FFFFFF;
+  font-size: 1.55rem;
+  line-height: 1.32;
+  margin: 0;
+}
+.boost-title .bt-sub strong { color: var(--boost-green); }
+
+/* ===== Code blocks: rounded brand cards =================================== */
+.slidev-layout .slidev-code {
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 14px rgba(23, 46, 42, 0.14);
+}
+
+/* ===== two-cols-header layout fixes ======================================= */
+.slidev-layout.two-cols-header {
+  gap: 0.5rem 1.5rem;
+  grid-template-rows: auto minmax(0, 1fr) auto !important;
+  --slidev-code-font-size: 11px;
+  --slidev-code-line-height: 16px;
+  --slidev-code-padding: 6px;
+}
+.slidev-layout.two-cols-header .col-left,
+.slidev-layout.two-cols-header .col-right {
+  min-width: 0;
+  min-height: 0;
+}
+.slidev-layout.two-cols-header .col-left :is(p, ul, ol, blockquote),
+.slidev-layout.two-cols-header .col-right :is(p, ul, ol, blockquote) {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>David's Slides — Boost inc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Raleway:wght@800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green: #69D77D;
+      --dark: #172E2A;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--dark);
+      color: #E7F1EA;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .wrap { width: 100%; max-width: 720px; }
+    h1 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: 2.6rem;
+      color: var(--green);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .sub { color: #9FB7A8; margin-bottom: 2.5rem; }
+    a.deck {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: #1f3b35;
+      border: 1px solid #2c4f47;
+      border-radius: 1rem;
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 1rem;
+      transition: border-color .15s, transform .15s;
+    }
+    a.deck:hover { border-color: var(--green); transform: translateY(-2px); }
+    a.deck .title {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+    a.deck .desc { color: #9FB7A8; font-size: 0.95rem; }
+    footer { margin-top: 2.5rem; color: #6f8a7e; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>David's Slides</h1>
+    <p class="sub">Presentations &amp; decks · Boost inc</p>
+
+    <a class="deck" href="./django52-pitch-deck/">
+      <div class="title">Vendlive — Dev Workflow Improvements</div>
+      <div class="desc">The developer-workflow changes that rode in with the Django 5.2 upgrade.</div>
+    </a>
+
+    <footer>Built with Slidev · deployed from <code>aeguana/david-slides</code></footer>
+  </div>
+</body>
+</html>
