@@ -29,13 +29,21 @@ jobs:
         with:
           node-version: 20
 
-      - name: Build boostinc-django52-pitch-deck
-        working-directory: boostinc-django52-pitch-deck
+      # Auto-discover decks: any top-level folder containing a slides.md is
+      # built and served at /slides/<folder>/. Add a new deck = add a folder;
+      # no workflow change needed.
+      - name: Build all decks
         run: |
-          npm install
-          npx slidev build --base /slides/boostinc-django52-pitch-deck/ --out ../dist/boostinc-django52-pitch-deck
-
-      # --- add a `npx slidev build ...` block per deck as the repo grows ---
+          set -e
+          for dir in */; do
+            deck="${dir%/}"
+            [ -f "$deck/slides.md" ] || continue
+            echo "::group::Building $deck"
+            ( cd "$deck" \
+              && npm install \
+              && npx slidev build --base "/slides/$deck/" --out "../dist/$deck" )
+            echo "::endgroup::"
+          done
 
       - name: Add landing page
         run: cp index.html dist/index.html
