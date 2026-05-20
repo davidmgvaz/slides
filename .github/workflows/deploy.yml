@@ -1,8 +1,8 @@
 name: Deploy slides to GitHub Pages
 
 # Builds every Slidev deck in the repo and publishes them to GitHub Pages.
-# Each deck is a top-level folder; it is served at /david-slides/<folder>/.
-# The landing page (index.html) is served at /david-slides/.
+# Each deck is a top-level folder; it is served at /slides/<folder>/.
+# The landing page (index.html) is served at /slides/.
 
 on:
   push:
@@ -33,7 +33,7 @@ jobs:
         working-directory: django52-pitch-deck
         run: |
           npm install
-          npx slidev build --base /david-slides/django52-pitch-deck/ --out ../dist/django52-pitch-deck
+          npx slidev build --base /slides/django52-pitch-deck/ --out ../dist/django52-pitch-deck
 
       # --- add a `npx slidev build ...` block per deck as the repo grows ---
 

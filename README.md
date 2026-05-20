@@ -1,14 +1,14 @@
-# david-slides
+# slides
 
-Presentation decks, built with [Slidev](https://sli.dev) and published to GitHub Pages.
+David's presentation decks, built with [Slidev](https://sli.dev) and published to GitHub Pages.
 
-**Live:** https://aeguana.github.io/david-slides/
+**Live:** https://davidmgvaz.github.io/slides/
 
 ## Decks
 
 | Folder | Deck | Live |
 |--------|------|------|
-| `django52-pitch-deck/` | Vendlive — Dev Workflow Improvements | https://aeguana.github.io/david-slides/django52-pitch-deck/ |
+| `django52-pitch-deck/` | Vendlive — Dev Workflow Improvements | https://davidmgvaz.github.io/slides/django52-pitch-deck/ |
 
 ## Running a deck locally
 
@@ -23,10 +23,10 @@ npm run dev        # opens http://localhost:3030
 `.github/workflows/deploy.yml` runs on every push to `main`. It builds each
 deck with Slidev and publishes the combined output to GitHub Pages:
 
-- the landing page (`index.html`) is served at `/david-slides/`
-- each deck is served at `/david-slides/<folder>/`
+- the landing page (`index.html`) is served at `/slides/`
+- each deck is served at `/slides/<folder>/`
 
-Each deck is built with `--base /david-slides/<folder>/` so its asset URLs
+Each deck is built with `--base /slides/<folder>/` so its asset URLs
 resolve under the Pages sub-path.
 
 ## Adding a new deck
@@ -40,7 +40,7 @@ resolve under the Pages sub-path.
      working-directory: my-deck
      run: |
        npm install
-       npx slidev build --base /david-slides/my-deck/ --out ../dist/my-deck
+       npx slidev build --base /slides/my-deck/ --out ../dist/my-deck
    ```
 3. Add a card for it in `index.html`.
 4. Push to `main` — Pages redeploys automatically.
