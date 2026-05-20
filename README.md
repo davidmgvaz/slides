@@ -8,12 +8,12 @@ David's presentation decks, built with [Slidev](https://sli.dev) and published t
 
 | Folder | Deck | Live |
 |--------|------|------|
-| `django52-pitch-deck/` | Vendlive — Dev Workflow Improvements | https://davidmgvaz.github.io/slides/django52-pitch-deck/ |
+| `boostinc-django52-pitch-deck/` | Vendlive — Dev Workflow Improvements | https://davidmgvaz.github.io/slides/boostinc-django52-pitch-deck/ |
 
 ## Running a deck locally
 
 ```sh
-cd django52-pitch-deck
+cd boostinc-django52-pitch-deck
 npm install
 npm run dev        # opens http://localhost:3030
 ```

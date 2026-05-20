@@ -29,11 +29,11 @@ jobs:
         with:
           node-version: 20
 
-      - name: Build django52-pitch-deck
-        working-directory: django52-pitch-deck
+      - name: Build boostinc-django52-pitch-deck
+        working-directory: boostinc-django52-pitch-deck
         run: |
           npm install
-          npx slidev build --base /slides/django52-pitch-deck/ --out ../dist/django52-pitch-deck
+          npx slidev build --base /slides/boostinc-django52-pitch-deck/ --out ../dist/boostinc-django52-pitch-deck
 
       # --- add a `npx slidev build ...` block per deck as the repo grows ---
 
@@ -41,6 +41,8 @@ jobs:
         run: cp index.html dist/index.html
 
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:

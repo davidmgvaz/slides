@@ -9,7 +9,7 @@ via the four `INTERNAL-4719-django-52` PRs.
 Requires Node 18+ (any modern version works — same as the Vue frontend).
 
 ```sh
-cd django52-pitch-deck
+cd boostinc-django52-pitch-deck
 npm install
 npm run dev          # opens http://localhost:3030
 ```
