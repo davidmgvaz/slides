@@ -61,6 +61,39 @@
   color: var(--boost-dark) !important;
 }
 
+/* ===== Agenda slide — left-aligned numbered list + full-height photo ====== */
+.slidev-layout.agenda-slide {
+  background-image: none !important; /* no logo on this slide */
+}
+.slidev-layout.agenda-slide h1,
+.slidev-layout.agenda-slide ol {
+  max-width: 60%;                    /* keep content clear of the photo */
+}
+.slidev-layout.agenda-slide ol {
+  text-align: left;
+  padding-left: 1.5em;
+}
+.slidev-layout.agenda-slide li {
+  margin: 0.4rem 0;
+}
+.agenda-slide .agenda-photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 38%;
+  object-fit: cover;
+  z-index: 1;
+}
+.agenda-slide .agenda-logo {
+  position: absolute;
+  top: 0.95rem;
+  right: 1.5rem;
+  height: 16px;
+  width: auto;
+  z-index: 2;
+}
+
 /* ===== Dark-green slides (section dividers) =============================== */
 .slidev-layout.boost-dark-slide {
   background-color: var(--boost-dark) !important;
@@ -78,6 +111,24 @@
 .slidev-layout.boost-dark-slide :not(pre) > code {
   background: rgba(105, 215, 125, 0.16) !important;
   color: var(--boost-green) !important;
+}
+
+/* Lists on the dark section / statement slides — always left-aligned with
+   green markers, so each number/bullet stays locked to its own line. */
+.slidev-layout.boost-dark-slide :is(ol, ul),
+.slidev-layout.boost-statement :is(ol, ul) {
+  text-align: left;
+  padding-left: 1.5em;
+}
+.slidev-layout.boost-dark-slide li,
+.slidev-layout.boost-statement li {
+  margin: 0.5rem 0;
+  padding-left: 0.2em;
+}
+.slidev-layout.boost-dark-slide li::marker,
+.slidev-layout.boost-statement li::marker {
+  color: var(--boost-green);
+  font-weight: 700;
 }
 
 /* ===== Statement slides — dark with bright-green corner blobs (tpl s19) ==== */

@@ -58,8 +58,8 @@ While I was in there, a lot of small papercuts became obvious:
 This deck pitches **11 changes** that, together, should make day-to-day work noticeably less painful — all now on master via the four `django-52` PRs. I want feedback on what to keep, build on, or roll back.
 
 ---
-layout: section
-class: boost-dark-slide
+layout: default
+class: boost-dark-slide agenda-slide
 ---
 
 # 11 pitches
@@ -75,6 +75,8 @@ class: boost-dark-slide
 9. Team handbook in `.claude/` — skills + docs
 10. A quiet quality net
 11. Faster Sentry triage
+
+<img src="/boost-machine.jpg" class="agenda-photo" alt="" />
 
 ---
 layout: two-cols-header
@@ -510,9 +512,11 @@ Small change, but it's the one that pays back the most when staging/prod is acti
 </div>
 
 ---
-layout: statement
-class: text-center boost-statement
+layout: default
+class: boost-statement
 ---
+
+<br/><br/>
 
 # What I want from you
 
