@@ -525,7 +525,7 @@ It's all on master — so this isn't "should we ship it", it's "is it pulling it
 - **What's earning its keep?** <br/>Tell me what you'd miss if it vanished — that's where we should invest.
 - **What feels like over-engineering?** <br/>Honest signal welcome — better to roll something back than carry dead weight.
 - **What's missing?** Papercuts I haven't hit yet.
-- **The open question** — proper version numbers (slide 14). Worth doing? Impacts?
+- **The open question** — proper version numbers (pitch 11). Worth doing? Impacts?
 
 ---
 layout: default
