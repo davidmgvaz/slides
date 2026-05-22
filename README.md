@@ -9,6 +9,8 @@ David's presentation decks, built with [Slidev](https://sli.dev) and published t
 | Folder | Deck | Live |
 |--------|------|------|
 | `boostinc-django52-pitch-deck/` | Vendlive — Dev Workflow Improvements | https://davidmgvaz.github.io/slides/boostinc-django52-pitch-deck/ |
+| `isla-bd-django52/` | Django 5.2 — From Database to Application (ISLA, LICE) | https://davidmgvaz.github.io/slides/isla-bd-django52/ |
+| `isla-pbd-django52/` | Django 5.2 — A camada aplicacional sobre a base de dados (ISLA, LEI) | https://davidmgvaz.github.io/slides/isla-pbd-django52/ |
 
 ## Running a deck locally
 

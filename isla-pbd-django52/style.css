@@ -1,0 +1,243 @@
+/* ============================================================
+   ISLA theme for Slidev
+   Derived from Isla.potx — "Facet Isla" colour scheme & fonts.
+   Brand: Instituto Politécnico de Gestão e Tecnologia (ISLA Gaia)
+   ============================================================ */
+
+:root {
+  --isla-wine:     #5B1F2E;  /* accent2  — primary brand */
+  --isla-wine-d:   #431620;  /* darker wine for gradients */
+  --isla-crimson:  #A40624;  /* accent3  — call-to-action / rules */
+  --isla-mauve:    #BA969A;  /* accent1  — soft accent */
+  --isla-rose:     #C5727F;  /* accent5 */
+  --isla-plum:     #8F4A79;  /* accent4 */
+  --isla-cream:    #E3DED1;  /* lt2      — warm light */
+  --isla-paper:    #FBFAF7;  /* slide background */
+  --isla-ink:      #2B2B2B;  /* dk2-ish  — body text */
+  --isla-ink-soft: #6A635C;  /* muted text */
+
+  --slidev-code-font-size: 0.80em;
+  --slidev-code-line-height: 1.45;
+}
+
+/* ---------- base slide ---------------------------------------------------- */
+.slidev-layout {
+  font-family: 'Trebuchet MS', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--isla-paper);
+  color: var(--isla-ink);
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3,
+.slidev-layout h4 {
+  font-family: 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif;
+  color: var(--isla-wine);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.slidev-layout h1 {
+  font-size: 1.95rem;
+  line-height: 1.15;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 3px solid var(--isla-crimson);
+  display: inline-block;
+}
+
+.slidev-layout h2 { font-size: 1.4rem; }
+.slidev-layout h3 { font-size: 1.1rem; color: var(--isla-plum); }
+
+.slidev-layout p,
+.slidev-layout li { line-height: 1.5; }
+
+.slidev-layout strong { color: var(--isla-wine); font-weight: 700; }
+.slidev-layout em { color: var(--isla-plum); font-style: normal; font-weight: 600; }
+
+.slidev-layout a {
+  color: var(--isla-crimson);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(164, 6, 36, 0.35);
+}
+
+/* bullet markers in brand colour */
+.slidev-layout ul > li::marker { color: var(--isla-crimson); }
+.slidev-layout ol > li::marker { color: var(--isla-crimson); font-weight: 700; }
+
+/* inline code */
+.slidev-layout :not(pre) > code {
+  background: #F0E7E3;
+  color: var(--isla-wine);
+  padding: 0.10em 0.35em;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+
+/* code blocks */
+.slidev-layout pre {
+  border-radius: 8px;
+  border-left: 4px solid var(--isla-crimson);
+  box-shadow: 0 4px 16px rgba(67, 22, 32, 0.12);
+}
+
+/* blockquotes */
+.slidev-layout blockquote {
+  border-left: 4px solid var(--isla-mauve);
+  background: #F4ECE3;
+  color: var(--isla-ink);
+  padding: 0.5rem 1rem;
+  font-style: normal;
+}
+
+/* ---------- tables -------------------------------------------------------- */
+.slidev-layout table { font-size: 0.85rem; border-collapse: collapse; }
+.slidev-layout thead th {
+  background: var(--isla-wine);
+  color: #fff;
+  font-weight: 700;
+  text-align: left;
+}
+.slidev-layout th, .slidev-layout td {
+  padding: 0.32rem 0.7rem;
+  border: 1px solid #E2D9D2;
+}
+.slidev-layout tbody tr:nth-child(even) { background: #F5EFEA; }
+
+/* ---------- cover slide --------------------------------------------------- */
+.isla-cover {
+  background:
+    radial-gradient(900px 500px at 88% 12%, rgba(143, 74, 121, 0.55), transparent 60%),
+    linear-gradient(135deg, var(--isla-wine) 0%, var(--isla-wine-d) 100%);
+  color: #F4ECE3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.isla-cover h1, .isla-cover h2, .isla-cover h3 { color: #fff; border: none; }
+.isla-cover .cover-logo { height: 62px; margin-bottom: 2.2rem; }
+.isla-cover .cover-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--isla-mauve);
+}
+.isla-cover .cover-title {
+  font-size: 3.1rem;
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0.6rem 0 0.4rem;
+  color: #fff;
+}
+.isla-cover .cover-rule {
+  width: 84px; height: 5px;
+  background: var(--isla-crimson);
+  border-radius: 3px;
+  margin: 1rem 0 1.3rem;
+}
+.isla-cover .cover-sub { font-size: 1.18rem; color: #EAD9DC; max-width: 30ch; }
+.isla-cover .cover-meta { margin-top: 2rem; font-size: 0.92rem; color: var(--isla-mauve); }
+.isla-cover .cover-meta strong { color: #fff; }
+
+/* ---------- section dividers --------------------------------------------- */
+.isla-section {
+  background:
+    radial-gradient(700px 480px at 12% 88%, rgba(186, 150, 154, 0.40), transparent 62%),
+    linear-gradient(135deg, var(--isla-wine) 0%, var(--isla-plum) 130%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.isla-section h1 {
+  color: #fff;
+  border: none;
+  font-size: 2.7rem;
+  display: block;
+}
+.isla-section .sec-num {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--isla-mauve);
+  text-transform: uppercase;
+}
+.isla-section .sec-note { color: #E7D3D6; font-size: 1.05rem; max-width: 46ch; }
+.isla-section ul > li::marker { color: var(--isla-mauve); }
+
+/* ---------- callout boxes ------------------------------------------------- */
+.lab, .note, .keyidea, .warn {
+  border-radius: 0 8px 8px 0;
+  padding: 0.7rem 1rem 0.7rem 1.05rem;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+.lab     { border-left: 6px solid var(--isla-crimson); background: #F6ECE4; }
+.note    { border-left: 6px solid var(--isla-mauve);   background: #F3EDEE; }
+.keyidea { border-left: 6px solid var(--isla-plum);    background: #F0EAF0; }
+.warn    { border-left: 6px solid #C9A227;             background: #F7F0DC; }
+
+.tag {
+  display: inline-block;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.13rem 0.55rem;
+  border-radius: 999px;
+  margin-bottom: 0.35rem;
+}
+.tag-lab  { background: var(--isla-crimson); color: #fff; }
+.tag-key  { background: var(--isla-plum);    color: #fff; }
+.tag-note { background: var(--isla-mauve);   color: #3a2329; }
+.tag-52   { background: #0C4B33; color: #fff; }   /* "Django 5.2" green */
+
+/* SQL ↔ Django comparison panels */
+.panel {
+  background: #fff;
+  border: 1px solid #E5DCD5;
+  border-top: 4px solid var(--isla-mauve);
+  border-radius: 8px;
+  padding: 0.3rem 0.85rem 0.6rem;
+}
+.panel.sql { border-top-color: var(--isla-plum); }
+.panel.dj  { border-top-color: var(--isla-crimson); }
+.panel h4  { margin: 0.4rem 0 0.2rem; }
+
+/* small / muted helpers */
+.muted  { color: var(--isla-ink-soft); }
+.small  { font-size: 0.82rem; }
+.tiny   { font-size: 0.72rem; }
+.center { text-align: center; }
+
+/* a big statement line */
+.statement-isla {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--isla-wine);
+  line-height: 1.3;
+}
+
+/* agenda numbering */
+.agenda { font-size: 1.02rem; }
+.agenda .t { color: var(--isla-ink-soft); font-size: 0.85rem; }
+
+/* ---------- footer (rendered by global-bottom.vue) ----------------------- */
+.isla-foot {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.32rem 1rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  color: var(--isla-mauve);
+  z-index: 5;
+}
+.isla-foot .fl { font-weight: 700; }
+.isla-foot .fr { font-variant-numeric: tabular-nums; }
+
+/* keep code from overflowing */
+.slidev-layout pre, .slidev-layout code { white-space: pre; }
