@@ -1,6 +1,6 @@
 ---
 theme: seriph
-title: Django 5.2 — A camada aplicacional sobre a base de dados
+title: Django — A camada aplicacional sobre a base de dados
 info: |
   ISLA Gaia · Programação de Bases de Dados (LEI) · Sessão de 4 horas.
   Django 5.2 para estudantes que já dominam SQL avançado, PL/pgSQL,
@@ -19,7 +19,7 @@ class: isla-cover
 
 <div class="cover-kicker">Instituto Politécnico de Gestão e Tecnologia · ISLA Gaia</div>
 
-<div class="cover-title">Django 5.2</div>
+<div class="cover-title">Django</div>
 
 <div class="cover-rule"></div>
 
@@ -1141,5 +1141,5 @@ class: isla-cover
 
 <div class="cover-meta">
 David Vaz · Programação de Bases de Dados · ISLA Gaia<br/>
-<strong>Django 5.2</strong> — a camada aplicacional sobre a base de dados
+<strong>Django</strong> — a camada aplicacional sobre a base de dados
 </div>

@@ -1,6 +1,6 @@
 ---
 theme: seriph
-title: Django 5.2 — From Database to Application
+title: Django — From Database to Application
 info: |
   ISLA Gaia · Databases (LICE) · A 4-hour theory + practice session.
   Introducing Django 5.2 to students who have designed a relational database.
@@ -19,7 +19,7 @@ class: isla-cover
 
 <div class="cover-kicker">Instituto Politécnico de Gestão e Tecnologia · ISLA Gaia</div>
 
-<div class="cover-title">Django 5.2</div>
+<div class="cover-title">Django</div>
 
 <div class="cover-rule"></div>
 
@@ -1350,5 +1350,5 @@ class: isla-cover
 
 <div class="cover-meta">
 David Vaz · Databases · ISLA Gaia<br/>
-<strong>Django 5.2</strong> — from your database to a real application
+<strong>Django</strong> — from your database to a real application
 </div>

@@ -115,7 +115,12 @@
   justify-content: center;
 }
 .isla-cover h1, .isla-cover h2, .isla-cover h3 { color: #fff; border: none; }
-.isla-cover .cover-logo { height: 62px; margin-bottom: 2.2rem; }
+.isla-cover .cover-logo {
+  width: 150px;
+  height: auto;             /* keep the logo's aspect ratio */
+  align-self: flex-start;   /* don't let the flex column stretch it */
+  margin-bottom: 2.2rem;
+}
 .isla-cover .cover-kicker {
   text-transform: uppercase;
   letter-spacing: 0.22em;
@@ -222,6 +227,26 @@
 /* agenda numbering */
 .agenda { font-size: 1.02rem; }
 .agenda .t { color: var(--isla-ink-soft); font-size: 0.85rem; }
+
+/* ---------- corner logo badge (rendered by global-bottom.vue) ------------ */
+/* A white chip so the logo reads on both light and dark slides. */
+.isla-corner-logo {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  padding: 7px 10px;
+  background: #ffffff;
+  border-radius: 7px;
+  box-shadow: 0 2px 9px rgba(43, 22, 28, 0.20);
+  z-index: 8;
+}
+.isla-corner-logo img {
+  height: 24px;
+  width: auto;              /* aspect ratio preserved */
+  display: block;
+}
 
 /* ---------- footer (rendered by global-bottom.vue) ----------------------- */
 .isla-foot {
