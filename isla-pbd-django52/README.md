@@ -33,10 +33,11 @@ logótipo (`isla-logo-white.png`) está junto ao `slides.md`.
 
 ## Código de apoio
 
-A prática usa a **polls app** do tutorial do Django sobre PostgreSQL:
+A prática usa a **polls app** do tutorial do Django sobre PostgreSQL — o
+repositório `isla-pbd-polls` (`github.com/davidmgvaz/isla-pbd-polls`):
 
-- `pbd-polls-starter/` — esqueleto para acompanhar a aula
-- `pbd-polls-solution/` — referência completa (inclui DRF, SQL bruto, signals)
+- ramo `main` — o esqueleto para acompanhar a aula
+- ramo `solution` — a referência completa (inclui DRF, SQL bruto, signals)
 
 ## Adicionar ao repositório `davidmgvaz/slides`
 

@@ -30,10 +30,11 @@ mauve `#BA969A`, cream — on the Slidev `seriph` base. The logo
 
 ## Companion code
 
-The hands-on practice uses the Django **polls app** on PostgreSQL:
+The hands-on practice uses the Django **polls app** on PostgreSQL — the
+`isla-db-polls` repo (`github.com/davidmgvaz/isla-db-polls`):
 
-- `bd-polls-starter/` — skeleton to code along with
-- `bd-polls-solution/` — completed reference
+- `main` branch — the starter students code along with
+- `solution` branch — the completed reference
 
 ## Adding to the `davidmgvaz/slides` repo
 

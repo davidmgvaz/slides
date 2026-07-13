@@ -408,7 +408,7 @@ class: text-sm
 <div class="lab">
 <span class="tag tag-lab">practice · 10 min</span>
 
-Start from the **`bd-polls-starter`** project (or scaffold your own):
+Clone **`isla-db-polls`** and stay on the `main` branch (or scaffold your own):
 
 1. Create and activate a virtual environment
 2. `pip install "django>=5.2,<5.3" "psycopg[binary]"`
@@ -1213,7 +1213,7 @@ class: text-sm
 <div class="note mt-3 small">
 <span class="tag tag-note">Done early?</span>
 Add a <code>results.html</code> page showing each choice and its vote total.
-The full solution is in <code>bd-polls-solution</code>.
+The full solution is on the <code>solution</code> branch.
 </div>
 
 ---
@@ -1326,7 +1326,7 @@ class: text-sm
 - **Official tutorial** — the polls app, in full — `docs.djangoproject.com/en/5.2/intro/`
 - **Django 5.2 documentation** — `docs.djangoproject.com/en/5.2/`
 - **The ORM / making queries** — `docs.djangoproject.com/en/5.2/topics/db/queries/`
-- **Today's code** — `bd-polls-starter` (skeleton) and `bd-polls-solution` (complete)
+- **Today's code** — `github.com/davidmgvaz/isla-db-polls` — starter on `main`, solution on the `solution` branch
 
 <div class="note mt-4">
 <span class="tag tag-note">Class theme</span>

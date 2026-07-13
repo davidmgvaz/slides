@@ -306,7 +306,7 @@ class: text-sm
 <div class="lab">
 <span class="tag tag-lab">prática · 10 min</span>
 
-A partir do projeto **`pbd-polls-starter`** (ou criando o vosso):
+A partir do repositório **`isla-pbd-polls`**, no ramo `main` (ou criando o vosso):
 
 1. Criar e ativar o ambiente virtual
 2. `pip install "django>=5.2,<5.3" "psycopg[binary]"`
@@ -847,7 +847,7 @@ No `python manage.py shell` (com `DEBUG=True`):
 
 <div class="note mt-2 small">
 <span class="tag tag-note">Solução</span>
-Tudo isto está resolvido em <code>pbd-polls-solution</code>.
+Tudo isto está resolvido no ramo <code>solution</code>.
 </div>
 
 ---
@@ -1027,7 +1027,7 @@ class: text-sm
 <div class="note mt-2 small">
 <span class="tag tag-note">Quem acabar cedo</span>
 Acrescentem ao serializer as <code>choices</code> aninhadas (nested
-serializer) — solução em <code>pbd-polls-solution</code>.
+serializer) — solução no ramo <code>solution</code>.
 </div>
 
 ---
@@ -1117,7 +1117,7 @@ class: text-sm
 - **ORM / fazer queries** — `docs.djangoproject.com/en/5.2/topics/db/`
 - **Executar SQL diretamente** — `.../topics/db/sql/`
 - **Django REST Framework** — `www.django-rest-framework.org`
-- **Código de hoje** — `pbd-polls-starter` e `pbd-polls-solution`
+- **Código de hoje** — `github.com/davidmgvaz/isla-pbd-polls` — starter no `main`, solução no ramo `solution`
 
 <div class="note mt-3 small">
 <span class="tag tag-52">Django 5.2</span>
