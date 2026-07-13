@@ -1,0 +1,258 @@
+/* ==========================================================================
+   "Patch Notes" — Slidev global style (direction 1b)
+   EuroPython 2026 · "I Am a Sucker for Conventions"
+   Drop this file next to slides.md — Slidev auto-loads style.{css,js,ts}.
+   Palette: Django greens on warm paper · voice: mono / terminal / diff.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap');
+
+:root {
+  --ep-paper:    #FAF8F3;                 /* warm paper background          */
+  --ep-ink:      #12301F;                 /* near-black green ink           */
+  --ep-green:    #2E9463;                 /* accent — between Django/Boost  */
+  --ep-deep:     #0C4B33;                 /* Django deep green (code bg)    */
+  --ep-boost:    #69D77D;                 /* Boost bright (inside code)     */
+  --ep-mint:     #93D7B7;                 /* light green (inside code)      */
+  --ep-sand:     #D2CDAF;                 /* Boost sand (inside code)       */
+  --ep-muted:    #5A6B60;                 /* secondary text                 */
+  --ep-tint:     rgba(46, 148, 99, 0.10); /* green row tint                 */
+  --ep-red:      #A2452F;                 /* muted diff-minus               */
+  --ep-red-tint: rgba(196, 85, 63, 0.10);
+  --ep-dash:     rgba(18, 48, 31, 0.25);  /* dashed rules                   */
+
+  /* ---- type scale (tune here; reduced ~15% on 12 Jul feedback) -------- */
+  --ep-h1:         2.0rem;   /* content slide titles        (was 2.4)  */
+  --ep-h1-section: 2.7rem;   /* section divider titles      (was 3.2)  */
+  --ep-h1-intro:   2.6rem;   /* title slide                 (was 3.1)  */
+  --ep-quote:      1.6rem;   /* quote-slide blockquote      (was 1.9)  */
+  --ep-body-lg:    1.05rem;  /* blockquote / callouts       (was 1.15) */
+  --ep-body:       0.95rem;  /* kv grid, announce           (was 1.05) */
+  --ep-small:      0.85rem;  /* kicker, footer              (was 0.95) */
+
+  /* ---- density (overflow pass, 12 Jul evening) ------------------------ */
+  --ep-code:       0.72rem;  /* code block font size — mono is wide    */
+  --ep-pad-y:      2.6rem;   /* slide padding, vertical   (was 3.4)    */
+  --ep-pad-x:      3.2rem;   /* slide padding, horizontal (was 3.8)    */
+}
+
+/* ===== Base ============================================================== */
+.slidev-layout {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  background-color: var(--ep-paper);
+  color: var(--ep-ink);
+  padding: var(--ep-pad-y) var(--ep-pad-x);
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3 {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ep-ink);
+  text-transform: lowercase; /* the "patch notes" voice — delete if unwanted */
+}
+/* …but never lowercase code identifiers inside headings (AUTH_USER_MODEL,
+   ModelAdmin, JSONField, …) — casing is meaning there. */
+.slidev-layout h1 code,
+.slidev-layout h2 code,
+.slidev-layout h3 code { text-transform: none; }
+.slidev-layout h1 { font-size: var(--ep-h1); line-height: 1.12; margin-bottom: 0.7rem; }
+
+.slidev-layout strong { color: var(--ep-ink); font-weight: 700; }
+.slidev-layout em { color: var(--ep-green); font-style: italic; }
+.slidev-layout a { color: var(--ep-green); text-underline-offset: 3px; }
+.slidev-layout a:hover { color: var(--ep-deep); }
+
+/* Kicker — the "# comment" line above a title. Usage: <p class="kicker"># …</p> */
+.slidev-layout .kicker {
+  color: var(--ep-green);
+  font-size: var(--ep-small);
+  margin: 0 0 0.4rem 0;
+}
+
+/* ===== Lists — every bullet is a diff addition =========================== */
+.slidev-layout ul { padding-left: 1.4em; }
+.slidev-layout ul li { margin: 0.3rem 0; }
+.slidev-layout ul li::marker { content: '+  '; color: var(--ep-green); font-weight: 700; }
+.slidev-layout ol li::marker { color: var(--ep-green); font-weight: 700; }
+
+/* Full diff treatment — tinted rows. Usage: frontmatter `class: diff`
+   (or wrap a list in <div class="diff">). Add class="minus" on an li
+   (via mdc: `- item {.minus}`) for the red removal row. */
+.slidev-layout .diff ul,
+.slidev-layout.diff ul { padding-left: 0; list-style: none; }
+/* the global `+` ::marker still renders despite list-style:none (explicit
+   ::marker content wins) — kill it here; the row's ::before provides +/- */
+.slidev-layout .diff ul li::marker,
+.slidev-layout.diff ul li::marker { content: ''; }
+.slidev-layout .diff ul li,
+.slidev-layout.diff ul li {
+  background: var(--ep-tint);
+  border-radius: 6px;
+  padding: 0.4rem 1rem 0.4rem 2.4rem;
+  position: relative;
+}
+.slidev-layout .diff ul li::before,
+.slidev-layout.diff ul li::before {
+  content: '+';
+  position: absolute;
+  left: 1rem;
+  color: var(--ep-green);
+  font-weight: 700;
+}
+.slidev-layout .diff ul li.minus,
+.slidev-layout.diff ul li.minus {
+  background: var(--ep-red-tint);
+  color: var(--ep-red);
+}
+.slidev-layout .diff ul li.minus::before,
+.slidev-layout.diff ul li.minus::before { content: '-'; color: var(--ep-red); }
+
+/* Enumeration list ("there are dozens more") — the markdown ul is a single
+   element, so use multicol on it rather than a grid around it. */
+.slidev-layout .dozens ul {
+  columns: 3;
+  column-gap: 1.6rem;
+  padding-left: 1.2em;
+}
+.slidev-layout .dozens ul li {
+  break-inside: avoid;
+  margin: 0.18rem 0;
+}
+
+/* ===== Inline code ======================================================= */
+.slidev-layout :not(pre) > code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88em;
+  padding: 0.05em 0.35em;
+  border-radius: 4px;
+  background: var(--ep-tint) !important;
+  color: var(--ep-deep) !important;
+}
+
+/* ===== Code blocks — dark Django-green panel in a dashed "patch" frame === */
+.slidev-layout .slidev-code-wrapper,
+.slidev-layout pre.slidev-code {
+  border-radius: 10px;
+}
+.slidev-layout pre.slidev-code {
+  background: var(--ep-deep) !important;
+  border: 3px dashed var(--ep-green);
+  padding: 0.85rem 1rem !important;
+  box-shadow: none;
+  font-size: var(--ep-code);
+  line-height: 1.55;
+}
+/* If the shiki theme paints its own bg, keep ours (see README: use a dark
+   shiki theme so token colors stay readable on the deep green). */
+.slidev-layout pre.slidev-code code { background: transparent !important; }
+
+/* ===== Blockquote — the "> quoted" voice ================================= */
+.slidev-layout blockquote {
+  border-left: 6px solid var(--ep-green);
+  background: none;
+  padding: 0.2rem 0 0.2rem 1.2rem;
+  color: var(--ep-ink);
+  font-size: var(--ep-body-lg);
+  line-height: 1.5;
+}
+.slidev-layout blockquote p::before { content: '> '; color: var(--ep-green); font-weight: 700; }
+
+/* Big quote slide. Usage: frontmatter `class: quote-slide` */
+.slidev-layout.quote-slide blockquote {
+  border-left-width: 10px;
+  font-size: var(--ep-quote);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 2.2rem;
+}
+.slidev-layout.quote-slide .attribution {
+  color: var(--ep-muted);
+  font-size: var(--ep-small);
+  margin-top: 2rem;
+}
+
+/* ===== Section dividers ================================================== */
+/* Works with seriph `layout: section`; adds the ### prefix + hatch band.   */
+.slidev-layout.slidev-layout-section,
+.slidev-layout.section {
+  background-color: var(--ep-paper);
+  position: relative;
+}
+.slidev-layout.section h1 {
+  font-size: var(--ep-h1-section);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+.slidev-layout.section h1::before { content: '### '; color: var(--ep-green); }
+.slidev-layout.section::after {
+  content: '';
+  position: absolute;
+  left: var(--ep-pad-x);
+  right: var(--ep-pad-x);
+  bottom: 3.2rem;
+  height: 1.6rem;
+  background: repeating-linear-gradient(-45deg, var(--ep-green) 0 4px, transparent 4px 14px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* ===== Title slide (layout: intro) ======================================= */
+.slidev-layout.intro { background-color: var(--ep-paper); }
+.slidev-layout.intro h1 {
+  font-size: var(--ep-h1-intro);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+/* Blinking cursor after the title. Usage: <span class="cursor"></span> */
+.slidev-layout .cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 0.95em;
+  background: var(--ep-green);
+  vertical-align: -0.08em;
+  margin-left: 0.15em;
+  animation: ep-blink 1.1s steps(1) infinite;
+}
+@keyframes ep-blink { 50% { opacity: 0; } }
+
+/* ===== Callout — dashed announcement box ================================= */
+/* Usage: <div class="announce"> <strong>+ announced here first:</strong> … </div> */
+.slidev-layout .announce {
+  border: 3px dashed var(--ep-green);
+  background: rgba(46, 148, 99, 0.08);
+  border-radius: 10px;
+  padding: 0.9rem 1.2rem;
+  font-size: var(--ep-body);
+}
+
+/* ===== Footer strip — author + logos above a dashed rule ================= */
+/* Usage: <div class="ep-footer"> <span>david vaz · @davidmgvaz</span>
+          <div class="logos"> <img …> <span>europython</span> … </div> </div> */
+.slidev-layout .ep-footer {
+  position: absolute;
+  left: var(--ep-pad-x);
+  right: var(--ep-pad-x);
+  bottom: 2.2rem;
+  border-top: 3px dashed var(--ep-dash);
+  padding-top: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--ep-small);
+}
+.slidev-layout .ep-footer .logos {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  font-size: 0.7rem;
+  color: rgba(18, 48, 31, 0.5);
+}
+.slidev-layout .ep-footer .logos img { height: 20px; width: auto; opacity: 0.8; }
+
+/* ===== whoami key = value grid =========================================== */
+/* Usage: <div class="kv"> <div>python&nbsp; = <strong>20+ years</strong></div> … </div> */
+.slidev-layout .kv { font-size: var(--ep-body); line-height: 2; }
+.slidev-layout .kv .label { color: var(--ep-green); margin-bottom: 0.4rem; }

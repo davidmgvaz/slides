@@ -1,0 +1,8 @@
+node_modules
+dist
+.slidev
+*.local
+README_style.md
+HANDOFF.md
+STYLE-HANDOFF-1b.md
+.idea
