@@ -9,6 +9,7 @@ highlighter: shiki
 lineNumbers: true
 mdc: true
 transition: slide-left
+routerMode: hash
 drawings:
   persist: false
 layout: default

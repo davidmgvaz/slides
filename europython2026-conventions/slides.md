@@ -12,6 +12,7 @@ lineNumbers: false
 drawings:
   persist: false
 transition: view-transition
+routerMode: hash
 mdc: true
 layout: intro
 ---

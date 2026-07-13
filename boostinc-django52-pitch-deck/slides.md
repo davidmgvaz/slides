@@ -12,6 +12,7 @@ lineNumbers: false
 drawings:
   persist: false
 transition: slide-left
+routerMode: hash
 mdc: true
 fonts:
   sans: Inter
