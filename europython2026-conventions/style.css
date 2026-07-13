@@ -30,10 +30,8 @@
   --ep-body:       0.95rem;  /* kv grid, announce           (was 1.05) */
   --ep-small:      0.85rem;  /* kicker, footer              (was 0.95) */
 
-  /* ---- density (overflow pass, 12 Jul evening) ------------------------ */
-  --ep-code:       0.72rem;  /* code block font size — mono is wide    */
-  --ep-pad-y:      2.6rem;   /* slide padding, vertical   (was 3.4)    */
-  --ep-pad-x:      3.2rem;   /* slide padding, horizontal (was 3.8)    */
+  /* ---- density (re-applied — see HANDOFF §7 regeneration trap) -------- */
+  --ep-code:       0.72rem;  /* code block font — mono is wide */
 }
 
 /* ===== Base ============================================================== */
@@ -41,7 +39,7 @@
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   background-color: var(--ep-paper);
   color: var(--ep-ink);
-  padding: var(--ep-pad-y) var(--ep-pad-x);
+  padding: 3.4rem 3.8rem;
 }
 
 .slidev-layout h1,
@@ -190,13 +188,14 @@
 .slidev-layout.section::after {
   content: '';
   position: absolute;
-  left: var(--ep-pad-x);
-  right: var(--ep-pad-x);
-  bottom: 3.2rem;
+  left: 3.8rem;
+  right: 3.8rem;
+  bottom: 2.2rem; /* sits directly above the global footer — acts as its divider */
   height: 1.6rem;
   background: repeating-linear-gradient(-45deg, var(--ep-green) 0 4px, transparent 4px 14px);
   opacity: 0.55;
   pointer-events: none;
+  view-transition-name: ep-hatch; /* morphs from/to the footer mini strip */
 }
 
 /* ===== Title slide (layout: intro) ======================================= */
@@ -233,16 +232,33 @@
           <div class="logos"> <img …> <span>europython</span> … </div> </div> */
 .slidev-layout .ep-footer {
   position: absolute;
-  left: var(--ep-pad-x);
-  right: var(--ep-pad-x);
+  left: 3.8rem;
+  right: 3.8rem;
   bottom: 2.2rem;
-  border-top: 3px dashed var(--ep-dash);
   padding-top: 1.1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: var(--ep-small);
 }
+.slidev-layout .ep-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0.35rem;
+  background: repeating-linear-gradient(-45deg, rgba(46, 148, 99, 0.55) 0 2.5px, transparent 2.5px 9px);
+  view-transition-name: ep-hatch; /* same morph group as footer strip + section band */
+}
+/* keep the hatch morph quick and soft; fade the old snapshot out fast so
+   the big band doesn't double-expose while shrinking back to the strip */
+::view-transition-group(ep-hatch) {
+  animation-duration: 0.45s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+::view-transition-old(ep-hatch) { animation-duration: 0.18s; }
+::view-transition-new(ep-hatch) { animation-duration: 0.45s; }
 .slidev-layout .ep-footer .logos {
   display: flex;
   align-items: center;

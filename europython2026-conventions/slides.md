@@ -11,7 +11,7 @@ highlighter: shiki
 lineNumbers: false
 drawings:
   persist: false
-transition: slide-left
+transition: view-transition
 mdc: true
 layout: intro
 ---
@@ -33,6 +33,7 @@ Speaker notes — 0:30
 
 ---
 layout: default
+hideFooter: true
 ---
 
 # <span style="color: var(--ep-green)">$</span> whoami
@@ -219,6 +220,8 @@ Speaker notes — 0:15
 -->
 
 ---
+zoom: 0.95
+---
 
 # Models — `AbstractUser` & `AUTH_USER_MODEL`
 
@@ -295,6 +298,8 @@ Speaker notes — 1:15
 -->
 
 ---
+zoom: 0.92
+---
 
 # Admin — `ModelAdmin` overrides
 
@@ -338,6 +343,8 @@ Speaker notes — 1:30
 -->
 
 ---
+zoom: 0.95
+---
 
 # Views & Forms — lifecycle hooks
 
@@ -380,6 +387,8 @@ Speaker notes — 1:15
   the cleanest places to inject runtime context.
 -->
 
+---
+zoom: 0.88
 ---
 
 # Auth — custom backends
@@ -471,6 +480,8 @@ Speaker notes — 0:15
 -->
 
 ---
+zoom: 0.9
+---
 
 <p class="kicker"># when there's no hatch</p>
 
@@ -502,6 +513,8 @@ Speaker notes — 0:45
   becomes interesting.
 -->
 
+---
+zoom: 0.88
 ---
 
 <p class="kicker"># when there's no hatch, you make one</p>
@@ -548,6 +561,8 @@ Speaker notes — 1:30
   and only became required in 2.0. Mention it if anyone squints.
 -->
 
+---
+zoom: 0.88
 ---
 
 # I used it. For everything.
@@ -912,6 +927,7 @@ Speaker notes — 1:15
 
 ---
 class: diff
+zoom: 0.9
 ---
 
 <p class="kicker"># bend, don't break</p>
@@ -982,7 +998,7 @@ Backward compatibility is also a convention. Django keeps that one religiously.
 
 </div>
 
-<div v-click class="mt-4 flex items-center gap-3">
+<div v-click class="mt-16 flex items-end gap-9">
   <img src="./images/boost-logo-green.png" class="h-8" alt="Boost Inc" />
   <span class="text-sm opacity-70">Thank you, Boost Inc, for backing my time here at EuroPython.</span>
 </div>
