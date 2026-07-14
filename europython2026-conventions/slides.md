@@ -26,10 +26,13 @@ layout: intro
 <EpFooter />
 
 <!--
-Speaker notes — 0:30
-- Walk on. Wait a beat.
-- "I am a sucker for conventions." Let that line breathe.
-- Don't apologise for it. It's the through-line of the next 30 minutes.
+clock 0:00 → 0:30 · 0:30
+
+I am a sucker for conventions. 
+
+That is not an apology; it is the whole talk.
+
+For the next thirty minutes, I want to show you why Django's defaults have earned my loyalty for nearly two decades, and exactly what I do on the days they stop earning it.
 -->
 
 ---
@@ -66,13 +69,26 @@ hideFooter: true
 <EpFooter />
 
 <!--
-Speaker notes — 1:00
-- Don't read the lists — one line each.
-- Land the announcement: this is the FIRST time DjangoCon Europe 2027 is said
-  out loud anywhere. Innsbruck, Austria. Enjoy the beat.
-- Same click also flips the kv line 2020–2025 → 2020–2027. Don't spoil it —
-  glance at the kv column as it changes.
-- Quick PyCon Portugal plug: Aveiro, 3–5 September, CFP and tickets live.
+clock 0:30 → 1:30 · 1:00
+
+Quickly, who am I?
+
+Twenty-plus years of Python; Django since 0.96, in 2007.
+
+Before AUTH_USER_MODEL, before South, before class-based views.
+
+These days, I am a senior Backend Developer at Boost Inc and teach Python and Django at university.
+
+The community column matters a lot to me: 
+
+I have co-organized DjangoCon Europe since 2020, the first virtual
+edition, followed by Porto, Vigo, Dublin.
+
+I founded PyCon Portugal. The fifth edition is this September in Aveiro; for the third to the fifth, you are more than welcome to join me. At PyCon Portugal, we pledge to host in a different city each year, which is a nice way to get to know our wonderful cities and find local Python enthusiasts.
+
+[click] And one more thing, which I can now announce: DjangoCon Europe 2027 is going to Innsbruck, Austria. With Jacob Rief as local organizer and Evolutio's team support, the same team that brought most of the previous editions. News will follow, hope to see you there.
+
+A quick shout to all community members who want to host a Django Con Europe or a PyCon Portugal, we need you. We can help in a number of ways. This year, at DjangoCon Europe in Athens, we simply share the knowledge with the local team to help them succeed. Next year, we will actually take the financial responsibility and be the core team together with Jacob. I am more than available to help you host a future DjangoCon Europe, wherever it is. Come find me after if you are interested.
 -->
 
 ---
@@ -84,10 +100,12 @@ layout: section
 # A confession
 
 <!--
-Speaker notes — 0:20
-- Pivot from cold open into the personal frame.
-- This whole talk is the answer to: why do I love conventions, and what do I do
-  when they stop earning their keep?
+clock 1:30 → 1:50 · 0:20
+
+
+So, the confession.
+
+This whole talk is me answering one question: why do I love conventions, and what do I do when they stop earning their keep?
 -->
 
 ---
@@ -110,9 +128,23 @@ so I don't have to.
 </div>
 
 <!--
-Speaker notes — 0:45
-- Click through. Land "cached decisions" — that's the framing I'll come back to.
-- Audience self-recognition moment: most senior Django devs feel this.
+clock 1:50 → 2:35 · 0:45
+
+I am a sucker for conventions because they carry my day.
+
+[click] They simplify the boring decisions.
+
+[click] They cut cognitive load.
+
+[click] A new teammate opens the project and already knows where things live.
+
+[click] Code reviews argue about the problem, not the layout.
+
+[click] I can focus on the actual problem
+
+[click] Here is the frame I will keep returning to: a convention is a cached decision.
+
+Someone smart already thought about it, carefully, once, so I do not have to think about it every morning.
 -->
 
 ---
@@ -138,9 +170,14 @@ That's a <em>massive</em> productivity gift. You'd notice if it were gone.
 </div>
 
 <!--
-Speaker notes — 0:30
-- This isn't a Django sales pitch — it's setup. We need to feel the weight of
-  what conventions give us before we touch the second half of the talk.
+clock 2:35 → 3:05 · 0:30
+
+As an over 20-year-old framework, 
+Django is a museum of great cached decisions.
+
+Two commands, and any Django developer on earth knows where settings live, where URLs live, how migrations work, how to get an admin.
+
+That is a massive productivity gift, and like all infrastructure, invisible until it is gone.
 -->
 
 ---
@@ -152,8 +189,13 @@ layout: section
 # But every convention is a decision
 
 <!--
-Speaker notes — 0:15
-- Beat. Look at the audience. This is the pivot.
+clock 3:05 → 3:20 · 0:15
+
+But.
+
+Every convention is a decision.
+
+And decisions have owners, contexts, and expiry dates.
 -->
 
 ---
@@ -176,9 +218,24 @@ class: diff
 </v-clicks>
 
 <!--
-Speaker notes — 1:00
-- Don't moralise. Frame it as professional curiosity.
-- Land "a convention you can't defend is just a habit." Pause.
+clock 3:20 → 4:20 · 1:00
+
+So let's ask them as decisions they are
+
+[click] Who decided this?
+
+[click] When?
+
+[click] What problem were they solving, [click] and is that still my problem?
+
+[click] What new problem does this convention create as my project grows?
+
+STOP
+
+These five questions are the difference between following a convention and merely obeying it.
+
+Because, and this is the line to take home from this section: [click]
+a convention you cannot defend is just a habit.
 -->
 
 ---
@@ -200,10 +257,19 @@ and recognising when one doesn't exist yet.
 </div>
 
 <!--
-Speaker notes — 1:00
-- This is the new through-line. Everything that follows is either an escape
-  hatch (a sanctioned deviation) or a hack (because no hatch existed yet).
-- The framework is good *because* it lets you disagree productively.
+clock 4:20 → 5:20 · 1:00
+
+Here is my actual thesis.
+
+Django's conventions earn their keep because they come with escape hatches.
+
+It is not that the defaults are perfect.
+
+It is rather that the framework expects you to disagree with them, and builds doors for it. The framework is good because it lets you disagree productively.
+
+The art of senior Django Developer work is knowing those hatches cold and hard, recognizing the day you are standing in front of a wall where a door should be.
+
+Everything that follows is one of those two situations.
 -->
 
 ---
@@ -215,9 +281,13 @@ layout: section
 # Escape hatches by design
 
 <!--
-Speaker notes — 0:15
-- Section divider. We're about to do a tour. ~10 minutes.
-- Pace fast — the point is *the existence* of the hatch, not a tutorial on each.
+clock 5:20 → 5:35 · 0:15
+
+First: the doors that exist.
+
+A fast tour.
+
+The point is that these hatches exist, not a tutorial on each.
 -->
 
 ---
@@ -256,10 +326,25 @@ Shipped in Django 1.5 (2013). We'll come back to what we did before this existed
 </div>
 
 <!--
-Speaker notes — 1:30
-- Foreshadow the monkey-patch story here — "we'll come back to what we did
-  before AUTH_USER_MODEL existed".
-- Get the audience to nod: "yes, this is the right way."
+clock 5:35 → 7:05 · 1:30
+
+The textbook example: the user model.
+
+The convention is: do not touch auth.User, swap it.
+
+[click] Subclass AbstractUser when you want the defaults plus your fields
+
+[click] drop to AbstractBaseUser when you want to own authentication itself.
+
+[click] Point AUTH_USER_MODEL at your class, and use get_user_model everywhere, never import User directly.
+
+Notice the shape of this hatch, because Django repeats it everywhere: the escape hatch is a dotted path in settings.py.
+
+[click] This one shipped in Django 1.5, in 2013.
+
+Hold that date.
+
+We will come back to what we did before it existed, and a story at the heart of this talk.
 -->
 
 ---
@@ -291,11 +376,19 @@ that drift across views and shell scripts.
 </div>
 
 <!--
-Speaker notes — 1:15
-- Optional aside: "if you see `Question.objects.filter(pub_date__lte=...)` in
-  three views, that's a `.published()` waiting to happen."
-- If asked: `models.Manager.from_queryset(QuestionQuerySet)` is the long form —
-  same result, useful when mixing into an existing Manager subclass.
+clock 7:05 → 8:20 · 1:15
+
+The ORM's most underused hatch: custom QuerySets.
+
+If the same filter call appears in three views, that is a published() method waiting to be born.
+
+Subclass QuerySet, define your domain vocabulary, wire it with as_manager.
+
+Chainable, composable, one source of truth for what published means.
+
+This replaces most of the helper functions that drift around a codebase.
+
+Simple, boring, official, and most teams never open the door.
 -->
 
 ---
@@ -333,14 +426,21 @@ Also: custom actions (<code>@admin.action</code>), <code>get_form</code>,
 </div>
 
 <!--
-Speaker notes — 1:30
-- The audience knows `list_display` and `inlines`. The point is to remind them
-  that `get_queryset`, `save_model`, `get_form`, and custom actions are part of
-  the same API surface and very cheap to override.
-- `save_model` is the hook I reach for constantly — inject request context into
-  every save. The same bend exists at the model layer via a `save()` override;
-  if you do that, *always* call `super().save()`. Bugs from skipping it are
-  still common.
+clock 8:20 → 9:50 · 1:30
+
+The admin looks like register and forget. One of the oldest features in Django, available to me since the beginning.
+
+It is actually hooks all the way down. list_select_related kills an N plus one in one line. get_queryset scopes what each user sees: row-level filtering, fully blessed.
+
+And save_model is the one I reach for constantly, injecting request context into every save: who created this, who touched it.
+
+The same bend exists on the model's own save method; if you take it, call super, always.
+
+People skip it, and the bugs are still boring and still common.
+
+Plus actions, get_form, inlines, a whole AdminSite if you need one.
+
+Every part is a hook.
 -->
 
 ---
@@ -379,13 +479,20 @@ Also: <code>get_context_data</code>, <code>get_form_kwargs</code>, <code>dispatc
 </div>
 
 <!--
-Speaker notes — 1:15
-- Senior audience: you've all done these. The point is that they are
-  *the framework's API*, not workarounds.
-- `form_valid` lives on the FormView family (`CreateView`/`UpdateView`) — hence
-  the second class. It never fires on a plain `ListView`.
-- The Form __init__ pattern in particular is officially supported and one of
-  the cleanest places to inject runtime context.
+clock 9:50 → 11:05 · 1:15
+
+Class-based views, sometimes feel like sushi, some love them some hate them, 
+
+At the beginning, they seem magical, but the named methods are a published API. get_queryset, reusing the QuerySet from two slides ago. form_valid on the create view, stamping ownership. `form_valid` lives on the FormView family (`CreateView`/`UpdateView`), It never fires on a plain `ListView`.
+
+And forms: passing context into the constructor and narrowing choices per user is officially supported, and one of the cleanest injection points in the framework. The Form __init__ pattern in particular is officially supported and one of the cleanest places to inject runtime context.
+
+These are not workarounds.
+
+They are the framework's interface.
+
+You've all done these. The point is that they are
+*the framework's API*, not workarounds.
 -->
 
 ---
@@ -422,9 +529,17 @@ AUTHENTICATION_BACKENDS = [
 ```
 
 <!--
-Speaker notes — 1:00
-- Senior audience: most of you have done this for SSO/LDAP/SAML. Worth saying
-  out loud that the backend API is *the* officially sanctioned deviation.
+clock 11:05 → 12:05 · 1:00
+
+Authentication backends: implement authenticate and get_user, register the dotted path, done.
+
+Login by email in twenty lines.
+
+They stack, and Django tries them in order.
+
+Everyone who has wired SSO or LDAP has walked through this door. The backend API is *the* officially sanctioned deviation.
+
+Again: the hatch is a string in settings.
 -->
 
 ---
@@ -461,9 +576,17 @@ and built a door for you to walk through.
 </div>
 
 <!--
-Speaker notes — 0:30
-- Don't read the list. Glance over it, say "the docs page on extension points
-  is a half-day read and the best half-day a senior Django dev can spend."
+clock 12:05 → 12:35 · 0:30
+
+And there are dozens more.
+
+Fields, storages, middleware, signals, routers, management commands.
+
+I will not read the slide.
+
+The docs page on extension points is a half day read, and it is the best half day a senior Django developer can spend.
+
+The point: each of these is a place Django expected you to disagree, and built a door.
 -->
 
 ---
@@ -475,9 +598,9 @@ layout: section
 # When there's no hatch
 
 <!--
-Speaker notes — 0:15
-- Pivot to the story. ~7 minutes here.
-- This is the personal section.
+clock 12:35 → 12:50 · 0:15
+
+But sometimes, there is no door.
 -->
 
 ---
@@ -509,9 +632,19 @@ choices:
 </div>
 
 <!--
-Speaker notes — 0:45
-- Set the scene. The audience needs to feel the constraint before the hack
-  becomes interesting.
+clock 12:50 → 13:35 · 0:45
+
+Django, 2010. auth. User is not swappable.
+
+Username, thirty characters.
+
+First name, last name: anglocentric, and half useless.
+
+Email: not unique.
+
+If you wanted login by email, or any real field on the user, you had two options: a Profile model with a OneToOne and joins everywhere.
+
+Or monkey patch User model.
 -->
 
 ---
@@ -553,13 +686,27 @@ But it worked. And in 2010 it was what we had.
 </div>
 
 <!--
-Speaker notes — 1:30
-- This is where it gets real for the senior part of the audience. Anyone who
-  was writing Django before 2013 used some variant of this.
-- "Old-style class" is a deliberate detail — Python 2 old-style class
-  semantics; the patcher walks `__dict__` directly. Tell the audience why.
-- Also period-accurate: no `on_delete`. It only arrived in Django 1.3 (2011)
-  and only became required in 2.0. Mention it if anyone squints.
+clock 13:35 → 15:05 · 1:30
+
+This is the ravelsoft patch_model pattern, 2010. I actually could not find the original post, nor am I sure this was the exact one I follow, but it was close enough for this talk anyway. 
+
+And yes, that is an old-style class, on purpose (this still worked with Python 2): the patcher walks the class dict directly.
+
+[click] It pops the original field out of User meta local_fields, 
+[click] re-adds yours preserving the creation counter so column order survives, 
+[click] and renames overridden methods so you can still call the original.
+
+Notice also what is missing: no on_delete. It only arrived in Django 1.3 (2011), and only became required in 2.0
+
+It did not exist yet.
+
+That is how old this code is.
+
+[click] The author called it, his words, a hacky solution.
+
+It was.
+
+It also worked, and in 2010 it was what we had.
 -->
 
 ---
@@ -570,7 +717,7 @@ zoom: 0.88
 
 <v-clicks>
 
-- The obvious fields — a unique `email`, `company`, `locale`, `avatar`
+- The obvious fields — a unique `email`, `company`, `locales`, `avatar`
 - The convenience methods — `full_name()`, `can_see(obj)`, `colleagues_of()`
 - And the big one: **row-level permissions on `User` and `Group`**
 
@@ -601,12 +748,31 @@ My problem demanded per-row. The framework had no hatch. I made one.
 </div>
 
 <!--
-Speaker notes — 1:30
-- Personal. This is where the audience trusts you because you're not selling
-  the hack — you're telling them about the day the framework didn't fit.
-- The shape of RowPermission (ContentType + object_id + permission, user OR
-  group) is exactly what django-guardian later shipped. Good aside:
-  "in hindsight, I had written a worse django-guardian."
+clock 15:05 → 16:35 · 1:30
+
+And I used it.
+
+For everything.
+
+[click] The obvious fields: unique email, locales.
+
+[click] Convenience methods.
+
+[click] And the big one: row-level permissions, patched onto User and Group.
+
+[click] Look at the shape of that query.
+
+ContentType plus object id plus permission, user or group.
+
+If that looks familiar, it is django-guardian, five years early and considerably worse, again there was a blog post explaining this idea, where I took inspiration back then, that I could not find anymore.
+
+[click] Django's convention said permissions are per model.
+
+My problem said per row.
+
+There was no hatch.
+
+So I hacked one.
 -->
 
 ---
@@ -649,11 +815,29 @@ Both stories <em>end well</em>. Neither ended with my code still in production.
 </div>
 
 <!--
-Speaker notes — 1:30
-- This is the punchline of the section. Both deviations were warranted, both
-  eventually had a home, but you had to *track the framework* to know when.
-- Tee up the flip: "and it's not just my story — once you see the shape,
-  you see it everywhere. Watch." Then hit the next four slides fast.
+clock 16:35 → 18:05 · 1:30
+
+Here is what happened next, and it is the punchline of the section.
+
+Two hacks, two different fates.
+
+The user patch: Django 1.5 shipped AUTH_USER_MODEL in 2013.
+
+The official door appears, I migrate, the patch dies.
+
+The row-level patch: Django never shipped row-level permissions.
+
+The community did.
+
+Guardian, rules, DRF object permissions.
+
+I migrated to those instead.
+
+Both stories end well.
+
+Neither ends with my code still in production, and that is the goal.
+
+But you only get that ending if you are watching the framework.
 -->
 
 ---
@@ -665,8 +849,15 @@ layout: section
 # Conventions are negotiated, not fixed
 
 <!--
-Speaker notes — 0:15
-- Pivot to the meta-frame. ~3 minutes.
+clock 18:05 → 18:20 · 0:15
+
+Which brings us to the real frame: conventions are not handed down.
+
+They are negotiated.
+
+And once you see the shape, you see it everywhere. This was not my story after all...
+
+Watch.
 -->
 
 ---
@@ -690,12 +881,13 @@ Community hack → funded negotiation → absorbed into core.
 </div>
 
 <!--
-Speaker notes — 0:10
-- FLIP MODE for this and the next three: ~10 s each, no clicks on purpose.
-  Headline + arc, keep walking. The repetition IS the point.
-- Spoken line over the flips: "and it keeps happening…"
-- If riffing: Django's deprecation policy is what makes this graceful — slow,
-  deliberate, signposted.
+clock 18:20 → 18:30 · 0:10
+
+Migrations.
+
+Raw SQL folklore, then South becomes the convention, then the community literally crowdfunds its author to rewrite it into core.
+
+Absorbed.
 -->
 
 ---
@@ -719,8 +911,11 @@ Community hack → official hatch → still being absorbed.
 </div>
 
 <!--
-Speaker notes — 0:10
-- Flip. Don't explain — the years do the work.
+clock 18:30 → 18:40 · 0:10
+
+Forms.
+
+Nobody wants to write form HTML. crispy-forms carries a decade, and Django absorbs it in slices: template widgets, div rendering, field groups.
 -->
 
 ---
@@ -744,8 +939,13 @@ Hack → contrib hatch → first-class field.
 </div>
 
 <!--
-Speaker notes — 0:10
-- Flip.
+clock 18:40 → 18:50 · 0:10
+
+JSONField.
+
+TextFields full of json.loads, then a package, then a Postgres-only hatch, then core.
+
+Hack to first class in eight years.
 -->
 
 ---
@@ -769,9 +969,11 @@ A twenty-year negotiation, closed last year. Every release is a negotiation made
 </div>
 
 <!--
-Speaker notes — 0:10
-- Last flip — note the title's tense shift: *still* happening. Sets up Carlton.
-- Beat before the next slide: "and sometimes the negotiation reopens…"
+clock 18:50 → 19:00 · 0:10
+
+And still happening: ticket 373, multiple column primary keys, opened in 2005, closed by CompositePrimaryKey in 5.2.
+
+A twenty year negotiation.
 -->
 
 ---
@@ -800,14 +1002,27 @@ That's not a failure of the framework. That's the negotiation working.
 </div>
 
 <!--
-Speaker notes — 1:15
-- This is the slide where the audience leans forward. Even the canonical
-  answer is up for re-examination — and that's a feature, not a bug.
-- Both quoted fragments are verbatim from the essay (31 Aug 2024) — safe to
-  attribute even if Carlton is in the room. The full sentence, for the voice:
-  "…they add a complexity tax we all pay, a performance tax that we're
-  invited to fall into, and fail to address in practice the problems they
-  were introduced to solve."
+clock 19:00 → 20:15 · 1:15
+
+And even the official answers get re-opened.
+
+Carlton Gibson, Django Fellow for five years, wrote in 2024 that custom user models are, his words, a failed experiment.
+
+[click] A complexity tax we all pay, a performance tax we are invited to fall into.
+
+Think about what that means.
+
+[click]
+
+[click]
+
+[click] The hatch I migrated to in 2013, the fix for my monkey patch, is itself back on the table.
+
+That is not the framework failing.
+
+That is the negotiation working.
+
+Nothing is sacred; everything is argued.
 -->
 
 ---
@@ -840,11 +1055,31 @@ write the post. File the ticket. Give the talk.
 </div>
 
 <!--
-Speaker notes — 1:00
-- Personal tone. Hand a small action item to the audience.
-- Aside worth landing: even the negotiation venue got renegotiated — the
-  django-developers mailing list retired into the Forum in 2025. The thesis,
-  proving itself.
+clock 20:15 → 21:15 · 1:00
+
+And here is the part people forget: you are allowed in the argument.
+
+[click] The ticket tracker is open.
+
+[click] The Forum is open.
+
+Fun fact: it replaced the django-developers mailing list last year, so even the negotiation venue got renegotiated.
+
+[click] DEPs are open.
+
+[click]
+
+[click] The hallway at this conference is open.
+
+[click] Django's conventions are good precisely because they are not handed down.
+
+They are argued, in public, by the people who use them.
+
+[click] So if you have been quietly bending a convention for two years and it works: write the post.
+
+File the ticket.
+
+Give the talk.
 -->
 
 ---
@@ -856,8 +1091,11 @@ layout: section
 # Bend, don't break
 
 <!--
-Speaker notes — 0:15
-- Last framework slide before the close.
+clock 21:15 → 21:30 · 0:15
+
+So how do you bend without breaking?
+
+Three habits.
 -->
 
 ---
@@ -884,9 +1122,25 @@ If you can't answer all three, you're not deviating — you're improvising.
 </div>
 
 <!--
-Speaker notes — 1:30
-- Take this slow. The three questions are the closest thing to a checklist
-  takeaway in the whole talk.
+clock 21:30 → 23:00 · 1:30
+
+First.
+
+Three questions before you deviate.
+
+[click] What problem was the convention solving?
+
+If you cannot answer, you do not get to deviate yet.
+
+[click] Is there an official hatch you have not found?
+
+Half of I-need-to-monkey-patch dissolves into I-had-not-read-about managers, or backends, or signals.
+
+[click] And if there truly is no hatch: what new problem am I creating, and how will the next person discover it exists?
+
+[click] If you cannot answer all three, you are not deviating.
+
+You are improvising.
 -->
 
 ---
@@ -908,22 +1162,39 @@ debt that compounds silently.
 
 <div v-click class="mt-5 opacity-80">
 
-Rule of thumb: <strong>every deviation deserves a paper trail bigger than the change itself.</strong>
-
-</div>
-
-<div v-click class="mt-3 opacity-80">
-
 In 2013 I had a one-line TODO on the `patch_model(User, ...)` line.<br/>
 In 2014 I deleted that line. It paid for itself.
 
 </div>
 
+<div v-click class="mt-3 opacity-80">
+
+Rule of thumb: <strong>every deviation deserves a paper trail bigger than the change itself.</strong>
+
+</div>
+
 <!--
-Speaker notes — 1:15
-- Practical. This is the slide where senior devs nod.
-- "A TODO with a trigger condition is the cheapest form of project memory."
-- The paper-trail line is deliberately a bit excessive. It should be.
+clock 23:00 → 24:15 · 1:15
+
+Second.
+
+When you do hack, leave a trail and set a watch.
+
+[click] Document why, in one obvious place.
+
+[click] Surface it: README, onboarding, a lint rule.
+
+[click] A TODO with a trigger condition, drop this when Django ships X, is a contract with yourself, and the cheapest project memory there is.
+
+[click] Track the ticket, [click] re-evaluate every major release.
+
+[click] My patch_model line had exactly one TODO on it.
+
+In 2014 I deleted the line.
+
+It paid for itself.
+
+[click] Rule of thumb: every deviation deserves a paper trail bigger than the change itself.
 -->
 
 ---
@@ -953,11 +1224,27 @@ That trade is sometimes worth it. Sometimes it isn't. Be honest with yourself.
 </div>
 
 <!--
-Speaker notes — 1:00
-- Honesty slide. Don't sell deviation as free.
-- The LLM point lands hard in 2026 — every team has felt this. Pause on it.
-- This is also a soft warning to junior devs in the room — "don't take this talk
-  as a license to invent."
+clock 24:15 → 25:15 · 1:00
+
+Third.
+
+Price it honestly.
+
+[click] New hires will ask.
+
+[click] Official Docs, Stack Overflow, blog posts stop helping.
+
+[click] LLMs, and this one lands in 2026, will confidently un-fix your deviation, every single time.
+
+[click] Tooling assumes the default, so now you maintain the bridge.
+
+[click] And you become responsible for the convention, because Django and Django Community are not carrying you anymore.
+
+[click] You are trading familiar friction for local friction.
+
+Sometimes worth it, sometimes not.
+
+Be honest about which.
 -->
 
 ---
@@ -969,8 +1256,9 @@ layout: section
 # Aside — real-world context
 
 <!--
-Speaker notes — 0:10
-- One small slide. Acknowledge the day job. Don't dwell.
+clock 25:15 → 25:25 · 0:10
+
+Thirty seconds on the day job, because I should say where all this got beaten into me.
 -->
 
 ---
@@ -1005,17 +1293,29 @@ Backward compatibility is also a convention. Django keeps that one religiously.
 </div>
 
 <!--
-Speaker notes — 1:00
-- Small Boost Inc nod. Mention the upgrade briefly. Don't turn it into a
-  retrospective talk — this is a side note.
-- Story beats to riff on (pick ONE): of the 864 files, almost all were
-  mechanical — the parts that fought back were pinned dependencies and
-  tooling, not Django; the deprecation warnings had been announcing every
-  break for two releases; the User model swap from 2013 sailed through
-  untouched — three majors later.
-- The "Django keeps backward compat religiously" line is a great way to close
-  the section while still complimenting the framework.
-- Land the thank-you: Boost paid for the time to be here. Short and warm.
+clock 25:25 → 26:25 · 1:00
+
+[click] 2007 to 2013: early Django, from 0.96 on.
+
+The patchmodel years.
+
+[click] 2013: migrating to the real user model.
+
+[click] Then long-lived apps, [click] and this year, at Boost, taking a ten year old codebase from 4.2 to 5.2.
+
+Four PRs, 864 files. By the way, I also upgraded from Python 3.10 to 3.13 right after.
+
+[click] And the framework's part of that upgrade?
+
+The smoothest part.
+
+The conventions held, even the ones being questioned.
+
+[click] Backward compatibility is a convention too, and Django keeps that one religiously.
+
+[click] Which is why this thank-you matters: Boost is why I get to be here.
+
+Thank you.
 -->
 
 ---
@@ -1025,6 +1325,12 @@ layout: section
 <p class="kicker"># the landing</p>
 
 # Takeaways
+
+<!--
+clock 26:25 → 26:25 · passthrough
+
+Let's land it.
+-->
 
 ---
 
@@ -1045,9 +1351,23 @@ layout: section
 </v-clicks>
 
 <!--
-Speaker notes — 1:15
-- Read them slowly. They're the closest thing to a recap; everything else has
-  been narrative.
+clock 26:25 → 27:40 · 1:15
+
+Five things.
+
+[click] Conventions are cached decisions: they free your head for the actual problem.
+
+[click] Every Django default ships with an escape hatch: learning them is the senior superpower.
+
+[click] When the hatch does not exist, hacking is fine, with a paper trail and a watch.
+
+[click] Track the framework: the 2010 hack became the 2013 hatch became the 2024 debate.
+
+[click] And stay in the negotiation.
+
+The conventions are good because people keep arguing about them.
+
+Be one of those people.
 -->
 
 ---
@@ -1078,8 +1398,21 @@ Django passes that test.
 </div>
 
 <!--
-Speaker notes — 0:45
-- Emotional close. Don't rush.
+clock 27:40 → 28:25 · 0:45
+
+After nearly two decades.
+
+Patching it when it did not fit.
+
+Swapping the user model when it finally let me.
+
+Watching the community question the very path I migrated to.
+
+I love this framework more, not less.
+
+Good conventions are the ones you can respectfully disagree with and still want to keep using.
+
+Django passes that test.
 -->
 
 ---
@@ -1111,7 +1444,11 @@ References:
 </div>
 
 <!--
-Speaker notes — 0:30
-- Stand still. Smile. Wait for the first hand.
-- If no hands: "what's the convention *you* love to hate?" is a reliable opener.
+clock 28:25 → 28:55 · 0:30
+
+That is it.
+
+Questions, gripes, but-actually, all welcome, here or in the hallway.
+
+Thank you.
 -->
