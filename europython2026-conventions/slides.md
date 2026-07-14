@@ -55,7 +55,7 @@ hideFooter: true
 <div class="label">[community]</div>
 <div>djangocon.eu = <strong>co-organizer, 2020–<span style="display: inline-grid"><span v-click.hide="1" style="grid-area: 1 / 1">2025</span><span v-click="1" style="grid-area: 1 / 1">2027</span></span></strong><br/>
 <span class="text-sm opacity-70">2020 · 2021 · 2022 porto · 2024 vigo · <br/>2025 dublin</span></div>
-<div>pycon.pt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <strong>founder, 2022→</strong><br/>
+<div>pycon.pt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <strong>co-founder, 2022→</strong><br/>
 <span class="text-sm opacity-70">2022 porto · 2023 coimbra · 2024 braga · <br/>2025 lisbon · <strong>2026 aveiro, sep 3–5</strong><br><a href="https://2026.pycon.pt">2026.pycon.pt</a></span></div>
 </div>
 </div>
@@ -73,9 +73,9 @@ clock 0:30 → 1:30 · 1:00
 
 Quickly, who am I?
 
-Twenty-plus years of Python; Django since 0.96, in 2007.
+Twenty-plus years of Python; Django since 0.96 back in 2007.
 
-Before AUTH_USER_MODEL, before South, before class-based views.
+Before AUTH_USER_MODEL, before South, before class-based views, before LTS, almost from the beginning
 
 These days, I am a senior Backend Developer at Boost Inc and teach Python and Django at university.
 
@@ -84,11 +84,13 @@ The community column matters a lot to me:
 I have co-organized DjangoCon Europe since 2020, the first virtual
 edition, followed by Porto, Vigo, Dublin.
 
-I founded PyCon Portugal. The fifth edition is this September in Aveiro; for the third to the fifth, you are more than welcome to join me. At PyCon Portugal, we pledge to host in a different city each year, which is a nice way to get to know our wonderful cities and find local Python enthusiasts.
+I co-founded PyCon Portugal. The fifth edition is this September in Aveiro; for the 3rd and 5th, you are more than welcome to join me. 
 
-[click] And one more thing, which I can now announce: DjangoCon Europe 2027 is going to Innsbruck, Austria. With Jacob Rief as local organizer and Evolutio's team support, the same team that brought most of the previous editions. News will follow, hope to see you there.
+At PyCon Portugal, we pledge to host in a different city each year, which is a nice way to get to know our wonderful cities and to find local Python enthusiasts.
 
-A quick shout to all community members who want to host a Django Con Europe or a PyCon Portugal, we need you. We can help in a number of ways. This year, at DjangoCon Europe in Athens, we simply share the knowledge with the local team to help them succeed. Next year, we will actually take the financial responsibility and be the core team together with Jacob. I am more than available to help you host a future DjangoCon Europe, wherever it is. Come find me after if you are interested.
+[click] And one more thing, which I can now announce: DjangoCon Europe 2027 is going to Innsbruck, Austria. With Jacob Rief as local organizer and Evolutio's team support, the same team that brought some of the previous editions. News will follow, hope to see you there.
+
+A quick shout to all community members who want to host a Django Con Europe or PyCon Portugal; we need you. We can help in a number of ways. This year, at DjangoCon Europe in Athens, we simply share the knowledge with the local team to help them succeed. Next year, we will actually take the financial responsibility and be the core team together with Jacob. I am more than available to help you host a future DjangoCon Europe, wherever it is. Come and find me after if you are interested.
 -->
 
 ---
@@ -194,8 +196,6 @@ clock 3:05 → 3:20 · 0:15
 But.
 
 Every convention is a decision.
-
-And decisions have owners, contexts, and expiry dates.
 -->
 
 ---
@@ -220,6 +220,8 @@ class: diff
 <!--
 clock 3:20 → 4:20 · 1:00
 
+And every decision has trade-offs
+
 So let's ask them as decisions they are
 
 [click] Who decided this?
@@ -234,8 +236,9 @@ STOP
 
 These five questions are the difference between following a convention and merely obeying it.
 
-Because, and this is the line to take home from this section: [click]
-a convention you cannot defend is just a habit.
+Because, and this is the line to take home from this talk: 
+
+[click] A convention you cannot defend is just a habit.
 -->
 
 ---
@@ -481,9 +484,9 @@ Also: <code>get_context_data</code>, <code>get_form_kwargs</code>, <code>dispatc
 <!--
 clock 9:50 → 11:05 · 1:15
 
-Class-based views, sometimes feel like sushi, some love them some hate them, 
+Class-based views sometimes feel like sushi; some love them, some hate them, 
 
-At the beginning, they seem magical, but the named methods are a published API. get_queryset, reusing the QuerySet from two slides ago. form_valid on the create view, stamping ownership. `form_valid` lives on the FormView family (`CreateView`/`UpdateView`), It never fires on a plain `ListView`.
+At the beginning, they seem magical, but the named methods are a published API. get_queryset, reusing the QuerySet from two slides ago. form_valid on the create view, stamping ownership. `form_valid` lives in the FormView family (`CreateView`/`UpdateView`). It never fires on a plain `ListView`.
 
 And forms: passing context into the constructor and narrowing choices per user is officially supported, and one of the cleanest injection points in the framework. The Form __init__ pattern in particular is officially supported and one of the cleanest places to inject runtime context.
 
@@ -634,17 +637,19 @@ choices:
 <!--
 clock 12:50 → 13:35 · 0:45
 
-Django, 2010. auth. User is not swappable.
+Django, 2010. auth.User was not swappable.
 
-Username, thirty characters.
+Username: thirty characters.
 
-First name, last name: anglocentric, and half useless.
+First name, last name: anglocentric and half-useless.
 
 Email: not unique.
 
-If you wanted login by email, or any real field on the user, you had two options: a Profile model with a OneToOne and joins everywhere.
+If you wanted to log in by email, or any real field on the user, you had two options: 
 
-Or monkey patch User model.
+A Profile model with a OneToOne and joins everywhere.
+
+Or monkey-patch the User model.
 -->
 
 ---
@@ -696,7 +701,7 @@ And yes, that is an old-style class, on purpose (this still worked with Python 2
 [click] re-adds yours preserving the creation counter so column order survives, 
 [click] and renames overridden methods so you can still call the original.
 
-Notice also what is missing: no on_delete. It only arrived in Django 1.3 (2011), and only became required in 2.0
+Notice also what is missing: no on_delete. It only arrived in Django 1.3 in 2011, and only became required in Django 2.0
 
 It did not exist yet.
 
@@ -706,7 +711,7 @@ That is how old this code is.
 
 It was.
 
-It also worked, and in 2010 it was what we had.
+It also worked, and in 2010, it was what we had.
 -->
 
 ---
@@ -762,9 +767,11 @@ For everything.
 
 [click] Look at the shape of that query.
 
-ContentType plus object id plus permission, user or group.
+ContentType + object_id + permission: user or group.
 
-If that looks familiar, it is django-guardian, five years early and considerably worse, again there was a blog post explaining this idea, where I took inspiration back then, that I could not find anymore.
+If that looks familiar, it is django-guardian, five years early and considerably worse.
+
+Again, there was a blog post explaining this idea, which I took inspiration from back then but can no longer find.
 
 [click] Django's convention said permissions are per model.
 
@@ -1035,7 +1042,7 @@ Nothing is sacred; everything is argued.
 - The **Django Forum** (Internals) is open — it replaced the `django-developers` list in 2025
 - **DEPs** (Django Enhancement Proposals) are open
 - The yearly release cycle is open
-- **DjangoCon hallway conversations** are open
+- **DjangoCon/EuroPython hallway conversations** are open
 
 </v-clicks>
 
@@ -1073,7 +1080,7 @@ Fun fact: it replaced the django-developers mailing list last year, so even the 
 
 [click] Django's conventions are good precisely because they are not handed down.
 
-They are argued, in public, by the people who use them.
+They are argued about in public by the people who use them.
 
 [click] So if you have been quietly bending a convention for two years and it works: write the post.
 
