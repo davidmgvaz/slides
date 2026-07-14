@@ -69,7 +69,7 @@ hideFooter: true
 <EpFooter />
 
 <!--
-clock 0:30 → 1:30 · 1:00
+clock 0:30 → 2:30 · 2:00
 
 Quickly, who am I?
 
@@ -102,7 +102,7 @@ layout: section
 # A confession
 
 <!--
-clock 1:30 → 1:50 · 0:20
+clock 2:30 → 2:50 · 0:20
 
 
 So, the confession.
@@ -130,7 +130,7 @@ so I don't have to.
 </div>
 
 <!--
-clock 1:50 → 2:35 · 0:45
+clock 2:50 → 3:25 · 0:35
 
 I am a sucker for conventions because they carry my day.
 
@@ -172,7 +172,7 @@ That's a <em>massive</em> productivity gift. You'd notice if it were gone.
 </div>
 
 <!--
-clock 2:35 → 3:05 · 0:30
+clock 3:25 → 3:50 · 0:25
 
 As an over 20-year-old framework, 
 Django is a museum of great cached decisions.
@@ -191,7 +191,7 @@ layout: section
 # But every convention is a decision
 
 <!--
-clock 3:05 → 3:20 · 0:15
+clock 3:50 → 4:05 · 0:15
 
 But.
 
@@ -218,19 +218,19 @@ class: diff
 </v-clicks>
 
 <!--
-clock 3:20 → 4:20 · 1:00
+clock 4:05 → 4:50 · 0:45
 
 And every decision has trade-offs
 
-So let's ask them as decisions they are
+So let's interrogate them like the decisions they are.
 
-[click] Who decided this?
+[click] Who made this call? A core developer? A committee? Some blog post in 2009?
 
-[click] When?
+[click] And when? The web that decision was made for may not exist anymore.
 
-[click] What problem were they solving, [click] and is that still my problem?
+[click] What hurt were they trying to stop, [click] and am I even feeling that hurt today?
 
-[click] What new problem does this convention create as my project grows?
+[click] And the sneaky one: what does this convention start to cost once the project is ten years old?
 
 STOP
 
@@ -260,7 +260,7 @@ and recognising when one doesn't exist yet.
 </div>
 
 <!--
-clock 4:20 → 5:20 · 1:00
+clock 4:50 → 5:35 · 0:45
 
 Here is my actual thesis.
 
@@ -284,7 +284,7 @@ layout: section
 # Escape hatches by design
 
 <!--
-clock 5:20 → 5:35 · 0:15
+clock 5:35 → 5:50 · 0:15
 
 First: the doors that exist.
 
@@ -329,7 +329,7 @@ Shipped in Django 1.5 (2013). We'll come back to what we did before this existed
 </div>
 
 <!--
-clock 5:35 → 7:05 · 1:30
+clock 5:50 → 7:00 · 1:10
 
 The textbook example: the user model.
 
@@ -379,7 +379,7 @@ that drift across views and shell scripts.
 </div>
 
 <!--
-clock 7:05 → 8:20 · 1:15
+clock 7:00 → 7:55 · 0:55
 
 The ORM's most underused hatch: custom QuerySets.
 
@@ -429,7 +429,7 @@ Also: custom actions (<code>@admin.action</code>), <code>get_form</code>,
 </div>
 
 <!--
-clock 8:20 → 9:50 · 1:30
+clock 7:55 → 9:05 · 1:10
 
 The admin looks like register and forget. One of the oldest features in Django, available to me since the beginning.
 
@@ -482,7 +482,7 @@ Also: <code>get_context_data</code>, <code>get_form_kwargs</code>, <code>dispatc
 </div>
 
 <!--
-clock 9:50 → 11:05 · 1:15
+clock 9:05 → 10:00 · 0:55
 
 Class-based views sometimes feel like sushi; some love them, some hate them, 
 
@@ -532,7 +532,7 @@ AUTHENTICATION_BACKENDS = [
 ```
 
 <!--
-clock 11:05 → 12:05 · 1:00
+clock 10:00 → 10:45 · 0:45
 
 Authentication backends: implement authenticate and get_user, register the dotted path, done.
 
@@ -579,7 +579,7 @@ and built a door for you to walk through.
 </div>
 
 <!--
-clock 12:05 → 12:35 · 0:30
+clock 10:45 → 11:10 · 0:25
 
 And there are dozens more.
 
@@ -601,7 +601,7 @@ layout: section
 # When there's no hatch
 
 <!--
-clock 12:35 → 12:50 · 0:15
+clock 11:10 → 11:25 · 0:15
 
 But sometimes, there is no door.
 -->
@@ -635,7 +635,7 @@ choices:
 </div>
 
 <!--
-clock 12:50 → 13:35 · 0:45
+clock 11:25 → 12:00 · 0:35
 
 Django, 2010. auth.User was not swappable.
 
@@ -691,7 +691,7 @@ But it worked. And in 2010 it was what we had.
 </div>
 
 <!--
-clock 13:35 → 15:05 · 1:30
+clock 12:00 → 13:10 · 1:10
 
 This is the ravelsoft patch_model pattern, 2010. I actually could not find the original post, nor am I sure this was the exact one I follow, but it was close enough for this talk anyway. 
 
@@ -753,7 +753,7 @@ My problem demanded per-row. The framework had no hatch. I made one.
 </div>
 
 <!--
-clock 15:05 → 16:35 · 1:30
+clock 13:10 → 14:20 · 1:10
 
 And I used it.
 
@@ -822,7 +822,7 @@ Both stories <em>end well</em>. Neither ended with my code still in production.
 </div>
 
 <!--
-clock 16:35 → 18:05 · 1:30
+clock 14:20 → 15:30 · 1:10
 
 Here is what happened next, and it is the punchline of the section.
 
@@ -856,7 +856,7 @@ layout: section
 # Conventions are negotiated, not fixed
 
 <!--
-clock 18:05 → 18:20 · 0:15
+clock 15:30 → 15:45 · 0:15
 
 Which brings us to the real frame: conventions are not handed down.
 
@@ -888,7 +888,7 @@ Community hack → funded negotiation → absorbed into core.
 </div>
 
 <!--
-clock 18:20 → 18:30 · 0:10
+clock 15:45 → 15:55 · 0:10
 
 Migrations.
 
@@ -918,7 +918,7 @@ Community hack → official hatch → still being absorbed.
 </div>
 
 <!--
-clock 18:30 → 18:40 · 0:10
+clock 15:55 → 16:05 · 0:10
 
 Forms.
 
@@ -946,7 +946,7 @@ Hack → contrib hatch → first-class field.
 </div>
 
 <!--
-clock 18:40 → 18:50 · 0:10
+clock 16:05 → 16:15 · 0:10
 
 JSONField.
 
@@ -976,7 +976,7 @@ A twenty-year negotiation, closed last year. Every release is a negotiation made
 </div>
 
 <!--
-clock 18:50 → 19:00 · 0:10
+clock 16:15 → 16:25 · 0:10
 
 And still happening: ticket 373, multiple column primary keys, opened in 2005, closed by CompositePrimaryKey in 5.2.
 
@@ -1009,7 +1009,7 @@ That's not a failure of the framework. That's the negotiation working.
 </div>
 
 <!--
-clock 19:00 → 20:15 · 1:15
+clock 16:25 → 17:20 · 0:55
 
 And even the official answers get re-opened.
 
@@ -1062,23 +1062,23 @@ write the post. File the ticket. Give the talk.
 </div>
 
 <!--
-clock 20:15 → 21:15 · 1:00
+clock 17:20 → 18:05 · 0:45
 
 And here is the part people forget: you are allowed in the argument.
 
-[click] The ticket tracker is open.
+[click] That ticket that annoys you? Anyone can open one, anyone can weigh in.
 
-[click] The Forum is open.
+[click] The Forum is where the real debates happen now.
 
 Fun fact: it replaced the django-developers mailing list last year, so even the negotiation venue got renegotiated.
 
-[click] DEPs are open.
+[click] The big changes go through DEPs, written by people like us.
 
 [click]
 
-[click] The hallway at this conference is open.
+[click] And honestly, half of Django's direction gets argued in hallways like the one outside this room.
 
-[click] Django's conventions are good precisely because they are not handed down.
+[click] That is exactly why the conventions are good: nobody handed them down.
 
 They are argued about in public by the people who use them.
 
@@ -1098,7 +1098,7 @@ layout: section
 # Bend, don't break
 
 <!--
-clock 21:15 → 21:30 · 0:15
+clock 18:05 → 18:20 · 0:15
 
 So how do you bend without breaking?
 
@@ -1129,21 +1129,21 @@ If you can't answer all three, you're not deviating — you're improvising.
 </div>
 
 <!--
-clock 21:30 → 23:00 · 1:30
+clock 18:20 → 19:30 · 1:10
 
 First.
 
-Three questions before you deviate.
+Three questions, before you deviate.
 
-[click] What problem was the convention solving?
+[click] One: do I understand what this convention was protecting me from?
 
 If you cannot answer, you do not get to deviate yet.
 
-[click] Is there an official hatch you have not found?
+[click] Two: did I actually go looking for the official door?
 
-Half of I-need-to-monkey-patch dissolves into I-had-not-read-about managers, or backends, or signals.
+In my experience, half of I-need-to-monkey-patch dissolves into I-had-not-read-about managers, or backends, or signals.
 
-[click] And if there truly is no hatch: what new problem am I creating, and how will the next person discover it exists?
+[click] Three: if the hatch truly is not there, what does my workaround cost, and how will the next person even find out it exists?
 
 [click] If you cannot answer all three, you are not deviating.
 
@@ -1181,19 +1181,19 @@ Rule of thumb: <strong>every deviation deserves a paper trail bigger than the ch
 </div>
 
 <!--
-clock 23:00 → 24:15 · 1:15
+clock 19:30 → 20:25 · 0:55
 
 Second.
 
 When you do hack, leave a trail and set a watch.
 
-[click] Document why, in one obvious place.
+[click] Write down the why, and put it where the next person will trip over it — not in your head.
 
-[click] Surface it: README, onboarding, a lint rule.
+[click] Make it loud: a line in the README, a note in onboarding, a lint rule pointing at the docs.
 
 [click] A TODO with a trigger condition, drop this when Django ships X, is a contract with yourself, and the cheapest project memory there is.
 
-[click] Track the ticket, [click] re-evaluate every major release.
+[click] Follow the ticket upstream, [click] and at every major release ask: does the hatch finally exist?
 
 [click] My patch_model line had exactly one TODO on it.
 
@@ -1231,7 +1231,7 @@ That trade is sometimes worth it. Sometimes it isn't. Be honest with yourself.
 </div>
 
 <!--
-clock 24:15 → 25:15 · 1:00
+clock 20:25 → 21:10 · 0:45
 
 Third.
 
@@ -1263,7 +1263,7 @@ layout: section
 # Aside — real-world context
 
 <!--
-clock 25:15 → 25:25 · 0:10
+clock 21:10 → 21:20 · 0:10
 
 Thirty seconds on the day job, because I should say where all this got beaten into me.
 -->
@@ -1300,7 +1300,7 @@ Backward compatibility is also a convention. Django keeps that one religiously.
 </div>
 
 <!--
-clock 25:25 → 26:25 · 1:00
+clock 21:20 → 22:05 · 0:45
 
 [click] 2007 to 2013: early Django, from 0.96 on.
 
@@ -1334,7 +1334,7 @@ layout: section
 # Takeaways
 
 <!--
-clock 26:25 → 26:25 · passthrough
+clock 22:05 → 22:05 · passthrough
 
 Let's land it.
 -->
@@ -1358,17 +1358,17 @@ Let's land it.
 </v-clicks>
 
 <!--
-clock 26:25 → 27:40 · 1:15
+clock 22:05 → 23:00 · 0:55
 
-Five things.
+Five things, and I will say them slowly.
 
-[click] Conventions are cached decisions: they free your head for the actual problem.
+[click] Conventions are cached decisions. Spend your thinking on your problem, not on plumbing.
 
-[click] Every Django default ships with an escape hatch: learning them is the senior superpower.
+[click] Every Django default ships with an escape hatch. Knowing them cold is what senior looks like in this framework.
 
-[click] When the hatch does not exist, hacking is fine, with a paper trail and a watch.
+[click] No hatch? Hack anyway — with a paper trail and a watch on the framework.
 
-[click] Track the framework: the 2010 hack became the 2013 hatch became the 2024 debate.
+[click] And track it, because this story rhymes: the 2010 hack, the 2013 hatch, the 2024 debate.
 
 [click] And stay in the negotiation.
 
@@ -1405,7 +1405,7 @@ Django passes that test.
 </div>
 
 <!--
-clock 27:40 → 28:25 · 0:45
+clock 23:00 → 23:35 · 0:35
 
 After nearly two decades.
 
@@ -1451,7 +1451,7 @@ References:
 </div>
 
 <!--
-clock 28:25 → 28:55 · 0:30
+clock 23:35 → 24:05 · 0:30
 
 That is it.
 

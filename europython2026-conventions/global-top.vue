@@ -22,7 +22,7 @@
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useNav } from '@slidev/client'
 
-const PLAN = [0, 30, 90, 110, 155, 185, 200, 260, 320, 335, 425, 500, 590, 665, 725, 755, 770, 815, 905, 995, 1085, 1100, 1110, 1120, 1130, 1140, 1215, 1275, 1290, 1380, 1455, 1515, 1525, 1585, 1585, 1660, 1705, 1735] // arrival seconds per page (1-based), last = total
+const PLAN = [0, 30, 150, 170, 205, 230, 245, 290, 335, 350, 420, 475, 545, 600, 645, 670, 685, 720, 790, 860, 930, 945, 955, 965, 975, 985, 1040, 1085, 1100, 1170, 1225, 1270, 1280, 1325, 1325, 1380, 1415, 1445] // arrival seconds per page (1-based), last = total
 
 const nav = useNav()
 const isPresenter = computed(() => {

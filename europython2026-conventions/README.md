@@ -5,8 +5,9 @@ EuroPython 2026 talk — 30 min, Chamber Hall B (S3B), Kraków.
 
 > Why Django's defaults work, until they don't.
 
-**Status: 37 slides, scripted for 28:55** (four of them are 10-second
-"history repeats" flip-cards). Full outline, content decisions,
+**Status: 37 slides, clocked at 24:05** (practice-calibrated; ~6 min Q&A
+in the 30-min slot; four slides are 10-second "history repeats"
+flip-cards). Full outline, content decisions,
 and open TODOs live in [`HANDOFF.md`](./HANDOFF.md) — read that first.
 
 > ⚠️ **Embargo:** slide 2 contains the first public announcement of
