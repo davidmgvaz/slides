@@ -1265,18 +1265,18 @@ layout: section
 <!--
 clock 21:10 → 21:20 · 0:10
 
-Thirty seconds on the day job, because I should say where all this got beaten into me.
+Thirty seconds on my day job, because I should say where all this resonated with me.
 -->
 
 ---
 
-# Where I learned all this — slowly, painfully
+# How I learned all this — steadily
 
 <v-clicks>
 
-- 2007–2013 — early Django, from **0.96** on: the `patchmodel` years
-- 2013–onwards — the `AUTH_USER_MODEL` migration on a few real projects
-- 2018–onwards — long-lived Django apps; the migration count climbs
+- 2007–2013 — early Django, from **0.96** on: fast moving, big updates each version, some monkey-patch
+- 2013–2017 — slowly getting more stable, the `AUTH_USER_MODEL`, migrations
+- 2018 onwards — The LTS Django era; the migration count climbs
 - **2026** — 4.2 → 5.2 at **Boost Inc**: 10-year-old codebase, 4 PRs, **864 files**
 
 </v-clicks>
@@ -1302,19 +1302,19 @@ Backward compatibility is also a convention. Django keeps that one religiously.
 <!--
 clock 21:20 → 22:05 · 0:45
 
-[click] 2007 to 2013: early Django, from 0.96 on.
+[click] Each version has new goodies, gotta get them all. The monkey-patch years when something was missing
 
-The patchmodel years.
+[click] Getting better and better
 
-[click] 2013: migrating to the real user model.
+[click] Then LTS, now I could breathe between LTS's
 
-[click] Then long-lived apps, [click] and this year, at Boost, taking a ten year old codebase from 4.2 to 5.2.
+[click] and this year, at Boost, taking a ten-year-old codebase from 4.2 to 5.2.
 
 Four PRs, 864 files. By the way, I also upgraded from Python 3.10 to 3.13 right after.
 
 [click] And the framework's part of that upgrade?
 
-The smoothest part.
+The smoothest part. The one I knew better.
 
 The conventions held, even the ones being questioned.
 
